@@ -1,0 +1,72 @@
+<code>
+>>> # Utilisation de `type()` pour obtenir le type d'un objet
+>>> type()
+Traceback (most recent call last):
+  File "&lt;stdin&gt;", line 1, in &lt;module&gt;
+TypeError: type() takes 1 or 3 arguments
+>>> type("chaine de caractères") # Chaine de caractères
+&lt;class 'str'&gt;
+>>> type(524) # Nombre entier
+&lt;class 'int'&gt;
+>>> type(["liste", 123, [], 12.45]) # Liste
+&lt;class 'list'&gt;
+>>> type(12.45) # Nombre décimal
+&lt;class 'float'&gt;
+>>> type((1, "chaine", 45.25)) # Tuple
+&lt;class 'tuple'&gt;
+>>> # Tester si un objet est d'un type spécifique
+>>> type("chaine") is str
+True
+>>> type("chaine") is int
+False
+>>> # Fonctions de conversion de types
+>>> # Conversion vers str
+>>> str()
+''
+>>> str(1)
+'1'
+>>> str([1, "chaine"])
+"[1, 'chaine']"
+>>> # Conversion vers int
+>>> int()
+0
+>>> int("21")
+21
+>>> int(21.12)
+21
+>>> int("21.12")
+Traceback (most recent call last):
+  File "&lt;stdin&gt;", line 1, in &lt;module&gt;
+ValueError: invalid literal for int() with base 10: '21.12'
+>>> int(float("21.12"))
+21
+>>> # Conversion vers float
+>>> float()
+0.0
+>>> float("12.34")
+12.34
+>>> # Gestion des erreurs de int() avec 'try'/'except'
+>>> valeur = 21.12
+>>> try:
+...     nombre_entier = int(valeur)
+...     print(nombre_entier)  # Affiche la valeur int de "valeur"
+... except ValueError:
+...     nombre_entier = int(float(valeur))
+...     print(nombre_entier)  # Affiche la valeur int de "valeur"
+... 
+21
+>>> # Création dynamique d'une classe avec `type()`
+>>> # Définir une classe parente
+>>> class ClasseParente:
+...     pass
+... 
+>>> # Créer une classe dynamiquement
+>>> NomClasse = type(
+... …    "NomClasse",               # Nom de la classe (chaîne de caractères)
+...     (ClasseParente,),          # Tuple des classes parentes (héritage)
+...     {"attr1": "valeur1"}       # Dictionnaire des attributs et méthodes
+... )
+>>> NomClasse.attr1
+'valeur1'
+>>> 
+</code>
