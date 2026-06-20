@@ -1,72 +1,352 @@
 <code>
->>> # Utilisation de `type()` pour obtenir le type d'un objet
->>> type()
-Traceback (most recent call last):
-  File "&lt;stdin&gt;", line 1, in &lt;module&gt;
-TypeError: type() takes 1 or 3 arguments
->>> type("chaine de caractères") # Chaine de caractères
-&lt;class 'str'&gt;
->>> type(524) # Nombre entier
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># Les types en Python</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># Utilisation de "type()" pour obtenir le type d'un objet</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> type()
+<span class="py-error">Traceback (most recent call last):</span>
+<span class="py-error">  File "&lt;stdin&gt;", line 1, in &lt;module&gt;</span>
+<span class="py-error">TypeError: type() takes 1 or 3 arguments</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># int : nombre entier</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> type(42)
 &lt;class 'int'&gt;
->>> type(["liste", 123, [], 12.45]) # Liste
-&lt;class 'list'&gt;
->>> type(12.45) # Nombre décimal
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># float : nombre à virgule flottante</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> type(3.14)
 &lt;class 'float'&gt;
->>> type((1, "chaine", 45.25)) # Tuple
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># complex : nombre complexe</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> type(2 + 3j)
+&lt;class 'complex'&gt;
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># str : chaîne de caractères</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> type("Bonjour")
+&lt;class 'str'&gt;
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># list : liste modifiable</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> type([1, 2, 3])
+&lt;class 'list'&gt;
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># tuple : collection non modifiable</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> type((1, 2, 3))
 &lt;class 'tuple'&gt;
->>> # Tester si un objet est d'un type spécifique
->>> type("chaine") is str
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># range : suite d'entiers</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> type(range(10))
+&lt;class 'range'&gt;
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># bytes : séquence d'octets immuable</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> type(b"Bonjour")
+&lt;class 'bytes'&gt;
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># bytearray : séquence d'octets modifiable</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> type(bytearray(b"Bonjour"))
+&lt;class 'bytearray'&gt;
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># memoryview : vue mémoire sur un objet binaire</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> type(memoryview(bytes(5)))
+&lt;class 'memoryview'&gt;
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># dict : dictionnaire clé/valeur</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> type({"nom": "Alice", "age": 25})
+&lt;class 'dict'&gt;
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># bool : valeur booléenne</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> type(True)
+&lt;class 'bool'&gt;
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># set : ensemble non ordonné d'éléments uniques</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> type({1, 2, 3})
+&lt;class 'set'&gt;
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># frozenset : ensemble immuable</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> type(frozenset({1, 2, 3}))
+&lt;class 'frozenset'&gt;
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># NoneType : absence de valeur</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> type(None)
+&lt;class 'NoneType'&gt;
+<span class="py-prompt">&gt;&gt;&gt;</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># Tester si un objet est d'un type spécifique</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> type("chaine") is str
 True
->>> type("chaine") is int
+<span class="py-prompt">&gt;&gt;&gt;</span> type("chaine") is int
 False
->>> # Fonctions de conversion de types
->>> # Conversion vers str
->>> str()
+<span class="py-prompt">&gt;&gt;&gt;</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># Fonctions de conversion de types</span>
+<span class="py-prompt">&gt;&gt;&gt;</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># Conversion vers str</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> str()
 ''
->>> str(1)
+<span class="py-prompt">&gt;&gt;&gt;</span> str(1)
 '1'
->>> str([1, "chaine"])
+<span class="py-prompt">&gt;&gt;&gt;</span> str([1, "chaine"])
 "[1, 'chaine']"
->>> # Conversion vers int
->>> int()
+<span class="py-prompt">&gt;&gt;&gt;</span> b = b"Bonjour"
+<span class="py-prompt">&gt;&gt;&gt;</span> str(b, encoding="utf-8")
+'Bonjour'
+<span class="py-prompt">&gt;&gt;&gt;</span> 
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># Conversion vers int</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> int()
 0
->>> int("21")
+<span class="py-prompt">&gt;&gt;&gt;</span> int("21")
 21
->>> int(21.12)
+<span class="py-prompt">&gt;&gt;&gt;</span> int(21.12)
 21
->>> int("21.12")
-Traceback (most recent call last):
-  File "&lt;stdin&gt;", line 1, in &lt;module&gt;
-ValueError: invalid literal for int() with base 10: '21.12'
->>> int(float("21.12"))
+<span class="py-prompt">&gt;&gt;&gt;</span> int("21.12")
+<span class="py-error">Traceback (most recent call last):</span>
+<span class="py-error">  File "&lt;stdin&gt;", line 1, in &lt;module&gt;</span>
+<span class="py-error">ValueError: invalid literal for int() with base 10: '21.12'</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> int(float("21.12"))
 21
->>> # Conversion vers float
->>> float()
-0.0
->>> float("12.34")
-12.34
->>> # Gestion des erreurs de int() avec 'try'/'except'
->>> valeur = 21.12
->>> try:
-...     nombre_entier = int(valeur)
-...     print(nombre_entier)  # Affiche la valeur int de "valeur"
-... except ValueError:
-...     nombre_entier = int(float(valeur))
-...     print(nombre_entier)  # Affiche la valeur int de "valeur"
-... 
-21
->>> # Création dynamique d'une classe avec `type()`
->>> # Définir une classe parente
->>> class ClasseParente:
-...     pass
-... 
->>> # Créer une classe dynamiquement
->>> NomClasse = type(
-... …    "NomClasse",               # Nom de la classe (chaîne de caractères)
-...     (ClasseParente,),          # Tuple des classes parentes (héritage)
-...     {"attr1": "valeur1"}       # Dictionnaire des attributs et méthodes
-... )
->>> NomClasse.attr1
-'valeur1'
->>> 
+<span class="py-prompt">&gt;&gt;&gt;</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># Conversion vers dict</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> dict()
+{}
+<span class="py-prompt">&gt;&gt;&gt;</span> dict([('a', 1), ('b', 2), ('c', 3)])
+{'a': 1, 'b': 2, 'c': 3}
+<span class="py-prompt">&gt;&gt;&gt;</span> dict(a=1, b=2)
+{'a': 1, 'b': 2}
+<span class="py-prompt">&gt;&gt;&gt;</span> dict({'a': 1, 'b': 2}, c=3)
+{'a': 1, 'b': 2, 'c': 3}
+<span class="py-prompt">&gt;&gt;&gt;</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># Erreurs de dict()</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> dict("123")
+<span class="py-error">Traceback (most recent call last):</span>
+<span class="py-error">  File "&lt;stdin&gt;", line 1, in &lt;module&gt;</span>
+<span class="py-error">ValueError: dictionary update sequence element #0 has length 1; 2 is required</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> dict("1", "a")
+<span class="py-error">Traceback (most recent call last):</span>
+<span class="py-error">  File "&lt;stdin&gt;", line 1, in &lt;module&gt;</span>
+<span class="py-error">TypeError: dict expected at most 1 argument, got 2</span>
+<span class="py-prompt">&gt;&gt;&gt;</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># Test d'un objet sur None</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> var = None
+<span class="py-prompt">&gt;&gt;&gt;</span> var is None
+True
+<span class="py-prompt">&gt;&gt;&gt;</span> var = ""
+<span class="py-prompt">&gt;&gt;&gt;</span> var is None
+False
+<span class="py-prompt">&gt;&gt;&gt;</span> 
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># Les opérateurs arithmétiques</span>
+<span class="py-prompt">&gt;&gt;&gt;</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># Addition (+)</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> 5 + 3
+8
+<span class="py-prompt">&gt;&gt;&gt;</span> "Bonjour" + " monde"
+'Bonjour monde'
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># Soustraction (-)</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> 5 - 4
+1
+<span class="py-prompt">&gt;&gt;&gt;</span> 5 - 8
+-3
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># Multiplication (*)</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> 4 * 3
+12
+<span class="py-prompt">&gt;&gt;&gt;</span> "ha" * 3
+'hahaha'
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># Exposant (**)</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> 2 ** 3
+8
+<span class="py-prompt">&gt;&gt;&gt;</span> 5 ** 2
+25
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># Division entière (//)</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> 17 // 5
+3
+<span class="py-prompt">&gt;&gt;&gt;</span> 20 // 3
+6
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># Division (/)</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> 17 / 5
+3.4
+<span class="py-prompt">&gt;&gt;&gt;</span> 10 / 2
+5.0
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># Modulo (%)</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> 17 % 5
+2
+<span class="py-prompt">&gt;&gt;&gt;</span> 20 % 3
+2
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># Les opérateurs de comparaison</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> 
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># Égal (==)</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> 5 == 5
+True
+<span class="py-prompt">&gt;&gt;&gt;</span> "abc" == "abc"
+True
+<span class="py-prompt">&gt;&gt;&gt;</span> 5 == 3
+False
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># Différent de (!=)</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> 5 != 3
+True
+<span class="py-prompt">&gt;&gt;&gt;</span> "chat" != "chien"
+True
+<span class="py-prompt">&gt;&gt;&gt;</span> 10 != 10
+False
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># Inférieur (<)</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> 3 < 5
+True
+<span class="py-prompt">&gt;&gt;&gt;</span> 8 < 2
+False
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># Supérieur (>)</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> 8 > 2
+True
+<span class="py-prompt">&gt;&gt;&gt;</span> 3 > 5
+False
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># Inférieur ou égal (<=)</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> 5 <= 5
+True
+<span class="py-prompt">&gt;&gt;&gt;</span> 4 <= 3
+False
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># Supérieur ou égal (>=)</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> 5 >= 5
+True
+<span class="py-prompt">&gt;&gt;&gt;</span> 2 >= 8
+False
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># Les opérateurs d'affectation</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> 
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># Affectation simple (=)</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> x = 10
+<span class="py-prompt">&gt;&gt;&gt;</span> x
+10
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># Addition puis affectation (+=)</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> x = 10
+<span class="py-prompt">&gt;&gt;&gt;</span> x += 5
+<span class="py-prompt">&gt;&gt;&gt;</span> x
+15
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># Soustraction puis affectation (-=)</span> 
+<span class="py-prompt">&gt;&gt;&gt;</span> x = 10
+<span class="py-prompt">&gt;&gt;&gt;</span> x -= 3
+<span class="py-prompt">&gt;&gt;&gt;</span> x
+7
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># Multiplication puis affectation (*=)</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> x = 4
+<span class="py-prompt">&gt;&gt;&gt;</span> x *= 3
+<span class="py-prompt">&gt;&gt;&gt;</span> x
+12
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># Exposant puis affectation (**=)</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> x = 2
+<span class="py-prompt">&gt;&gt;&gt;</span> x **= 3
+<span class="py-prompt">&gt;&gt;&gt;</span> x
+8
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># Division puis affectation (/=)</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> x = 20
+<span class="py-prompt">&gt;&gt;&gt;</span> x /= 4
+<span class="py-prompt">&gt;&gt;&gt;</span> x
+5.0
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># Division entière puis affectation (//=)</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> x = 17
+<span class="py-prompt">&gt;&gt;&gt;</span> x //= 5
+<span class="py-prompt">&gt;&gt;&gt;</span> x
+3
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># Modulo puis affectation (%=)</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> x = 17
+<span class="py-prompt">&gt;&gt;&gt;</span> x %= 5
+<span class="py-prompt">&gt;&gt;&gt;</span> x
+2
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># ET logique bit à bit puis affectation (&=)</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> x = 12 <span class="py-comment"># 1100</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> x &= 10 <span class="py-comment"># 1010</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> x
+8 <span class="py-comment"># 1000</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># XOR logique bit à bit puis affectation (^=)</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> x = 12 <span class="py-comment"># 1100</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> x ^= 10 <span class="py-comment"># 1010</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> x
+6 <span class="py-comment"># 0110</span> 
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># OU logique bit à bit puis affectation (|=)</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> x = 12 <span class="py-comment"># 1100</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> x |= 10 <span class="py-comment"># 1010</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> x
+14 <span class="py-comment"># 1110</span> 
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># Décalage à gauche puis affectation (<<=)</span> 
+<span class="py-prompt">&gt;&gt;&gt;</span> x = 3 <span class="py-comment"># 0011</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> x <<= 2     <span class="py-comment"># Décalage de 2 bits vers la gauche</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> x
+12 <span class="py-comment"># 1100</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># Décalage à droite puis affectation (>>=)</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> x = 12 <span class="py-comment"># 1100</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> x >>= 2 <span class="py-comment"># Décalage de 2 bits vers la droite</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> x
+3 <span class="py-comment"># 0011</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># Les opérateurs booléens</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> 
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># ET booléen (and)</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> True and True
+True
+<span class="py-prompt">&gt;&gt;&gt;</span> True and False
+False
+<span class="py-prompt">&gt;&gt;&gt;</span> 5 > 2 and 10 > 3
+True
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># OU booléen (or)</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> True or False
+True
+<span class="py-prompt">&gt;&gt;&gt;</span> False or False
+False
+<span class="py-prompt">&gt;&gt;&gt;</span> 5 > 10 or 10 > 3
+True
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># NON booléen (not)</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> not True
+False
+<span class="py-prompt">&gt;&gt;&gt;</span> not False
+True
+<span class="py-prompt">&gt;&gt;&gt;</span> not (5 > 2)
+False
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># Les opérateurs logiques (bit à bit)</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> 
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># ET logique (&)</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> 12 & 10 <span class="py-comment"># 1100 & 1010</span>
+8 <span class="py-comment"># 1000</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> bin(12)
+'0b1100'
+<span class="py-prompt">&gt;&gt;&gt;</span> bin(10)
+'0b1010'
+<span class="py-prompt">&gt;&gt;&gt;</span> bin(12 & 10)
+'0b1000'
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># OU logique (|)</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> 12 | 10 <span class="py-comment"># 1100 | 1010</span>
+14 <span class="py-comment"># 1110</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> bin(12 | 10)
+'0b1110'
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># OU exclusif logique (XOR) (^)</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> 12 ^ 10 <span class="py-comment"># 1100 ^ 1010</span>
+6 <span class="py-comment"># 0110</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> bin(12 ^ 10)
+'0b110'
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># NON logique (~)</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> ~5 <span class="py-comment"># Inversion des bits de 0101</span>
+-6
+<span class="py-prompt">&gt;&gt;&gt;</span> ~10 <span class="py-comment"># Inversion des bits de 1010</span>
+-11
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># Décalage à gauche (<<)</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> 3 << 2 <span class="py-comment"># 0011 devient 1100</span>
+12
+<span class="py-prompt">&gt;&gt;&gt;</span> bin(3)
+'0b11'
+<span class="py-prompt">&gt;&gt;&gt;</span> bin(3 << 2)
+'0b1100'
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># Décalage à droite (>>)</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> 12 >> 2 <span class="py-comment"># 1100 devient 0011</span>
+3
+<span class="py-prompt">&gt;&gt;&gt;</span> bin(12)
+'0b1100'
+<span class="py-prompt">&gt;&gt;&gt;</span> bin(12 >> 2)
+'0b11'
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># Les opérateurs d'identité</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> 
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># Identique (is)</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> x = [1, 2, 3]
+<span class="py-prompt">&gt;&gt;&gt;</span> y = x
+<span class="py-prompt">&gt;&gt;&gt;</span> x is y
+True
+<span class="py-prompt">&gt;&gt;&gt;</span> a = 1000 ; 
+<span class="py-prompt">&gt;&gt;&gt;</span> b = 1000
+<span class="py-prompt">&gt;&gt;&gt;</span> a is b
+False
+<span class="py-prompt">&gt;&gt;&gt;</span> a == b
+True
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># Non identique (is not)</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> x = [1, 2, 3]
+<span class="py-prompt">&gt;&gt;&gt;</span> y = [1, 2, 3]
+<span class="py-prompt">&gt;&gt;&gt;</span> x is not y
+True
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># Les opérateurs d'appartenance</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> 
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># Appartient (in)</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> "a" in "chat"
+True
+<span class="py-prompt">&gt;&gt;&gt;</span> 3 in [1, 2, 3, 4]
+True
+<span class="py-prompt">&gt;&gt;&gt;</span> "nom" in {"nom": "Pierre", "age": 25}
+True
+<span class="py-prompt">&gt;&gt;&gt;</span> <span class="py-comment"># N'appartient pas (not in)</span>
+<span class="py-prompt">&gt;&gt;&gt;</span> "z" not in "chat"
+True
+<span class="py-prompt">&gt;&gt;&gt;</span> 10 not in [1, 2, 3, 4]
+True
+<span class="py-prompt">&gt;&gt;&gt;</span> "ville" not in {"nom": "Pierre", "age": 25}
+True
+<span class="py-prompt">&gt;&gt;&gt;</span> 
 </code>

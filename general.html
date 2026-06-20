@@ -1,17 +1,369 @@
 
-<u><b>Chaines de caractères (str):</b></u>
-Suite de caractères pouvant former des phrases.
-Elles s'écrivent courament str.
-C'est un type de donnée on peut le tester avec la fonction type().<a href="#" onclick="rechercheRapide('type(&quot;chaine de caractères&quot;)', 3)">🔎</a>
-Les chaines sont encadrés par des apostrophes ('Texte'), de guillemets ("Texte"), des triples apostrophes ('''Texte''') ou des triples guillemets ("""Texte""").
-On peut transformer d'autes types de données (comme les int ou les float) en chaines de caractère avec la fonction str().
-<a href="#" onclick="voirAussi('voir-aussi-string')">Voir aussi</a>
-<a class="voir-aussi-string" href="#" onclick="rechercheRapide('type()', 2)">type()</a>
-<a class="voir-aussi-string" href="#" onclick="rechercheRapide('str()', 2)">str()</a>
+<u><b>Les types de données :</b></u>
 
-<div id="nombres-entiers-integer"><u><b>Nombres entiers (int):</b></u></div>
-Les nombres entier s'écrivent comme les nombres entier mathématiques (1, 25, 475, 3652).
-Ils s'écrivent courament int.
-Ils peuvent servir à effectuer des opérations mathématiques.
-C'est un type de donnée on peut le tester avec la fonction type().
-On peut transformer d'autes types de données (comme les float ou les str) en entiers avec la fonction int()
+  En Python, les types de données permettent de représenter et de manipuler différentes catégories d’informations. Parmi les types de base, on trouve les entiers (<a href="#" onclick="rechercheRapide('Nombres entiers (int):', 1)">int</a>), utilisés pour les nombres sans partie décimale, les nombres décimaux (<a href="#" onclick="rechercheRapide('float', 1)">float</a>) pour les valeurs décimales, les chaînes de caractères (<a href="#" onclick="rechercheRapide('Chaînes de caractères (str):', 1)">str</a>) pour le texte, et les booléens (<a href="#" onclick="rechercheRapide('bool', 1)">bool</a>) qui prennent les valeurs True ou False. Python propose également des structures de données plus complexes, comme les listes (<a href="#" onclick="rechercheRapide('list', 1)">list</a>), qui stockent des collections ordonnées et modifiables d’éléments, les tuples (<a href="#" onclick="rechercheRapide('tuple', 1)">tuple</a>), similaires aux listes mais immuables, les ensembles (<a href="#" onclick="rechercheRapide('set', 1)">set</a>), qui contiennent des éléments uniques, et les dictionnaires (<a href="#" onclick="rechercheRapide('dict', 1)">dict</a>), qui associent des clés à des valeurs. Grâce à cette diversité de types de données, Python permet de développer des programmes flexibles et adaptés à de nombreux besoins, tout en facilitant la gestion et l’organisation des informations.
+  On peut tester le type d'un objet avec la fontion <a href="#" onclick="rechercheRapide('type() f. ou o. :', 2)">type()</a>.
+
+<u><b>int (nombres entiers):</b></u>
+
+ Le type int est utilisé pour représenter les nombres entiers, c’est-à-dire les nombres sans partie décimale, comme -5, 0 ou 42. Il est couramment utilisé pour les calculs, les compteurs et les indices dans les structures de données.
+ Les variables de type int peuvent être créées directement en attribuant une valeur entière ou en convertissant une autre donnée à l’aide de la fonction <a href="#" onclick="rechercheRapide('int()', 2)">int()</a>.
+
+<u><b>float (nombres décimaux):</b></u>
+
+Le type float permet de représenter les nombres à virgule flottante, c’est-à-dire les nombres comportant une partie décimale, comme 3.14, -0.5 ou 2.0. Il est utilisé pour les calculs nécessitant une précision décimale.
+Les variables de type float peuvent être créées directement en attribuant une valeur décimale ou en convertissant une autre donnée à l’aide de la fonction <a href="#" onclick="rechercheRapide('float()', 2)">float()</a>.
+
+<u><b>complex :</b></u>
+
+Le type complex permet de représenter des nombres complexes composés d’une partie réelle et d’une partie imaginaire, comme (3 + 2j). Il est principalement utilisé dans les calculs scientifiques et mathématiques.
+Les variables de type complex peuvent être créées directement en utilisant la notation complexe ou en convertissant des valeurs à l’aide de la fonction <a href="#" onclick="rechercheRapide('complex()', 2)">complex()</a>.
+
+<u><b>str :</b></u>
+
+Le type str est utilisé pour stocker du texte sous forme de chaînes de caractères. Les chaînes peuvent contenir des lettres, des chiffres ou des symboles, comme "Bonjour" ou "Python".
+Les variables de type str peuvent être créées directement en utilisant des guillemets ("" ou '') ou en convertissant une autre donnée à l’aide de la fonction <a href="#" onclick="rechercheRapide('str()', 2)">str()</a>.
+
+<u><b>list :</b></u>
+
+Le type list permet de stocker une collection ordonnée d’éléments. Les listes sont modifiables et peuvent contenir des données de types différents.
+Les variables de type list peuvent être créées directement à l’aide de crochets [] ou en convertissant une séquence grâce à la fonction <a href="#" onclick="rechercheRapide('list()', 2)">list()</a>.
+
+<u><b>tuple :</b></u>
+
+Le type tuple est une collection ordonnée d’éléments similaire à une liste, mais dont le contenu ne peut pas être modifié après sa création.
+Les variables de type tuple peuvent être créées directement à l’aide de parenthèses () ou en convertissant une séquence grâce à la fonction <a href="#" onclick="rechercheRapide('typle()', 2)">tuple()</a>.
+
+<u><b>range :</b></u>
+
+Le type range représente une séquence de nombres générée automatiquement. Il est souvent utilisé dans les boucles pour répéter une action un certain nombre de fois.
+Les variables de type range peuvent être créées à l’aide de la fonction <a href="#" onclick="rechercheRapide('range()', 2)">range()</a>, en précisant une valeur de départ, d’arrêt et éventuellement un pas.
+
+<u><b>bytes :</b></u>
+
+Le type bytes permet de manipuler des données binaires sous forme d’une séquence immuable d’octets. Il est utilisé pour le traitement de fichiers ou de données réseau.
+Les variables de type bytes peuvent être créées directement avec le préfixe b ou à l’aide de la fonction <a href="#" onclick="rechercheRapide('bytes()', 2)">bytes()</a>.
+
+<u><b>bytearray :</b></u>
+
+Le type bytearray est similaire à bytes, mais il est modifiable. Il est utile lorsque les données binaires doivent être modifiées après leur création.
+Les variables de type bytearray peuvent être créées à l’aide de la fonction <a href="#" onclick="rechercheRapide('bytearray()', 2)">bytearray()</a>.
+
+<u><b>memoryview :</b></u>
+
+Le type memoryview permet d’accéder directement aux données binaires d’un objet sans les copier en mémoire, ce qui améliore les performances.
+Les variables de type memoryview peuvent être créées à partir d’un objet binaire à l’aide de la fonction <a href="#" onclick="rechercheRapide('memoryview()', 2)">memoryview()</a>.
+
+<u><b>dict :</b></u>
+
+Le type dict stocke des données sous forme de paires clé-valeur. Chaque clé est unique et permet d’accéder rapidement à la valeur associée.
+Les variables de type dict peuvent être créées directement avec des accolades {} ou à l’aide de la fonction <a href="#" onclick="rechercheRapide('dict()', 2)">dict()</a>.
+
+<u><b>bool :</b></u>
+
+Le type bool représente une valeur logique pouvant être soit True, soit False. Il est utilisé dans les conditions et les comparaisons.
+Les variables de type bool peuvent être créées directement avec les valeurs True ou False, ou en convertissant une donnée grâce à la fonction <a href="#" onclick="rechercheRapide('bool()', 2)">bool()</a>.
+
+<u><b>set :</b></u>
+
+Le type set permet de stocker une collection non ordonnée d’éléments uniques. Il est souvent utilisé pour supprimer les doublons ou effectuer des opérations ensemblistes.
+Les variables de type set peuvent être créées à l’aide d’accolades {} contenant des éléments uniques ou grâce à la fonction <a href="#" onclick="rechercheRapide('set()', 2)">set()</a>.
+
+<u><b>frozenset :</b></u>
+
+Le type frozenset est une version immuable du type set. Une fois créé, son contenu ne peut plus être modifié.
+Les variables de type frozenset peuvent être créées à partir d’un ensemble ou d’une séquence grâce à la fonction <a href="#" onclick="rechercheRapide('frozenset()', 2)">frozenset()</a>.
+
+<u><b>NoneType :</b></u>
+
+Le type NoneType est le type de l’objet spécial None, qui représente l’absence de valeur ou une valeur nulle. Il est souvent utilisé pour indiquer qu’une variable n’a pas encore reçu de donnée significative ou qu’une fonction ne retourne aucun résultat particulier. Comme None est un singleton (il n’existe qu’une seule instance de cet objet), on vérifie généralement sa présence avec l’opérateur is. <a href="#" onclick="rechercheRapide('', 3)">🔎</a>L’utilisation correcte de None permet de gérer proprement les cas où une valeur est absente ou indéfinie dans un programme.
+
+<u><b>Les opérateurs :</b></u>
+
+  Les opérateurs sont des petits signes tels que +, != ou and.
+  Ils peuvent servir à comparer des objets ou à effectuer des opérations simples.
+  La plupart des opérateurs se placent entre deux opérandes, mais certains s'appliquent devant un seul opérande.
+
+<a href="#" onclick="voirAussi('voir-aussi-operateurs')">Voir aussi</a>
+<a class="voir-aussi-operateurs" href="#" onclick="rechercheRapide('Les opérateurs arithmétiques :', 1)">opérateurs arithmétiques</a>
+<a class="voir-aussi-operateurs" href="#" onclick="rechercheRapide('Les opérateurs de comparaison :', 1)">opérateurs de comparaison</a>
+<a class="voir-aussi-operateurs" href="#" onclick="rechercheRapide('Les opérateurs d\'affectation :', 1)">opérateurs d'affectation</a>
+<a class="voir-aussi-operateurs" href="#" onclick="rechercheRapide('Les opérateurs booléens :', 1)">opérateurs booléens</a>
+<a class="voir-aussi-operateurs" href="#" onclick="rechercheRapide('Les opérateurs logiques ou bit à bit :', 1)">opérateurs booléens ou bit à bit </a>
+<a class="voir-aussi-operateurs" href="#" onclick="rechercheRapide('Les opérateurs d\'identité :', 1)">Les opérateurs d'identité</a>
+<a class="voir-aussi-operateurs" href="#" onclick="rechercheRapide('Les opérateurs d\'appartenance :', 1)">Les opérateurs d'appartenance</a>
+
+<u><b>Les opérateurs arithmétiques :</b></u>
+
+  Les opérateurs arithmétiques permettent d'effectuer des opérations entre des nombres (int et float) et des chaînes de caractères pour + et *.
+
+<table border="0">
+ <tr>
+  <th>Opérateur</th>
+  <th>Signification</th>
+  <th></th>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('+', 2)">+</a></td>
+  <td>addition</td>
+  <td><a href="#" onclick="rechercheRapide(' + ', 3, wholeWord=false)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('-', 2)">-</a></td>
+  <td>soustraction</td>
+  <td><a href="#" onclick="rechercheRapide(' - ', 3, wholeWord=false)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('*', 2)">*</a></td>
+  <td>multiplication</td>
+  <td><a href="#" onclick="rechercheRapide(' * ', 3, wholeWord=false)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('**', 2)">**</a></td>
+  <td>exposant (puissance)</td>
+  <td><a href="#" onclick="rechercheRapide(' ** ', 3, wholeWord=false)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('//', 2)">//</a></td>
+  <td>division entière (quotient de la division euclidienne)</td>
+  <td><a href="#" onclick="rechercheRapide(' // ', 3, wholeWord=false)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('/', 2)">/</a></td>
+  <td>division</td>
+  <td><a href="#" onclick="rechercheRapide(' / ', 3, wholeWord=false)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('%', 2)">%</a></td>
+  <td>modulo (reste)</td>
+  <td><a href="#" onclick="rechercheRapide(' % ', 3, wholeWord=false)">🔎</a></td>
+ </tr>
+</table>
+
+<u><b>Les opérateurs de comparaison :</b></u>
+
+  Les opérateurs de comparaison permettent de comparer plusieurs objets en retournant une valeur booléenne telle que True ou False dont on peut se servir pour des instructions telles que if ou while.
+
+<table border="0">
+ <tr>
+  <th>Opérateur</th>
+  <th>Signification</th>
+  <th></th>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('== (égalité) :', 2)">==</a></td>
+  <td>égal</td>
+  <td><a href="#" onclick="rechercheRapide('==', 3, wholeWord=false)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('!=', 2)">!=</a></td>
+  <td>différent de</td>
+  <td><a href="#" onclick="rechercheRapide('!=', 3, wholeWord=false)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('< (inférieur) :', 2)">&lt;</a></td>
+  <td>inférieur</td>
+  <td><a href="#" onclick="rechercheRapide('<', 3, wholeWord=false)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('> (supérieur) :', 2)">&gt;</a></td>
+  <td>supérieur</td>
+  <td><a href="#" onclick="rechercheRapide('>', 3, wholeWord=false)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('<= (inférieur ou égal) :', 2)">&lt;=</a></td>
+  <td>inférieur ou égal</td>
+  <td><a href="#" onclick="rechercheRapide('<=', 3, wholeWord=false)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('>= (supérieur ou égal) :', 2)">&gt;=</a></td>
+  <td>supérieur ou égal</td>
+  <td><a href="#" onclick="rechercheRapide('>=', 3, wholeWord=false)">🔎</a></td>
+ </tr>
+</table>
+
+<u><b>Les opérateurs d'affectation :</b></u>
+
+  Les opérateurs d'affectation attribuent une valeur à une variable.
+
+<table border="0">
+ <tr>
+  <th>Opérateur</th>
+  <th>Signification</th>
+  <th></th>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('= (affectation) :', 2)">=</a></td>
+  <td>x = y (affecte la valeur de y à x)</td>
+  <td> <a href="#" onclick="rechercheRapide(' = ', 3, wholeWord=false)">🔎</a> </td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('+=', 2)">+=</a></td>
+  <td>x = x + y</td>
+  <td> <a href="#" onclick="rechercheRapide('+=', 3, wholeWord=false)">🔎</a ></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('-=', 2)">-=</a></td>
+  <td>x = x - y</td>
+  <td> <a href="#" onclick="rechercheRapide('-=', 3, wholeWord=false)">🔎</a> </td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('*=', 2)">*=</a></td>
+  <td>x = x * y</td>
+  <td> <a href="#" onclick="rechercheRapide('*=', 3, wholeWord=false)">🔎</a> </td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('**=', 2)">**=</a></td>
+  <td>x = x ** y</td>
+  <td><a href="#" onclick="rechercheRapide('**=', 3, wholeWord=false)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('/=', 2)">/=</a></td>
+  <td>x = x / y</td>
+  <td><a href="#" onclick="rechercheRapide('/=', 3, wholeWord=false)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('//=', 2)">//=</a></td>
+  <td>x = x // y</td>
+  <td><a href="#" onclick="rechercheRapide('//=', 3, wholeWord=false)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('%=', 2)">%=</a></td>
+  <td>x = x % y</td>
+  <td><a href="#" onclick="rechercheRapide('%=', 3, wholeWord=false)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('&=', 2)">&=</a></td>
+  <td>x = x & y</td>
+  <td><a href="#" onclick="rechercheRapide('&=', 3, wholeWord=false)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('^=', 2)">^=</a></td>
+  <td>x = x ^ y</td>
+  <td><a href="#" onclick="rechercheRapide('^=', 3, wholeWord=false)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('|=', 2)">|=</a></td>
+  <td>x = x | y</td>
+  <td><a href="#" onclick="rechercheRapide('|=', 3, wholeWord=false)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('<<=', 2)">&lt;&lt;=</a></td>
+  <td>x = x << y</td>
+  <td><a href="#" onclick="rechercheRapide('<<=', 3, wholeWord=false)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('>>=', 2)">&gt;&gt;=</a></td>
+  <td>x = x >> y</td>
+  <td><a href="#" onclick="rechercheRapide('>>=', 3, wholeWord=false)">🔎</a></td>
+ </tr>
+</table>
+
+<u><b>Les opérateurs booléens :</b></u>
+
+<table border="0">
+ <tr>
+  <th>Opérateur</th>
+  <th>Signification</th>
+  <th></th>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('and', 2)">and</a></td>
+  <td>ET booléen</td>
+  <td><a href="#" onclick="rechercheRapide('and', 3, wholeWord=false)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('or', 2)">or</a></td>
+  <td>OU booléen</td>
+  <td><a href="#" onclick="rechercheRapide(' or ', 3, wholeWord=false)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('not :', 2)">not</a></td>
+  <td>NON booléen</td>
+  <td><a href="#" onclick="rechercheRapide(' not ', 3, wholeWord=false)">🔎</a></td>
+ </tr>
+</table>
+
+<u><b>Les opérateurs logiques ou bit à bit :</b></u>
+
+<table border="0">
+ <tr>
+  <th>Opérateur</th>
+  <th>Signification</th>
+  <th></th>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('&', 2)">&amp;</a></td>
+  <td>ET logique</td>
+  <td><a href="#" onclick="rechercheRapide(' & ', 3, wholeWord=false)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('|', 2)">|</a></td>
+  <td>OU logique</td>
+  <td><a href="#" onclick="rechercheRapide(' | ', 3, wholeWord=false)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('^', 2)">^</a></td>
+  <td>OU exclusif logique (XOR)</td>
+  <td><a href="#" onclick="rechercheRapide(' ^ ', 3, wholeWord=false)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('~', 2)">~</a></td>
+  <td>NON logique</td>
+  <td><a href="#" onclick="rechercheRapide('~', 3, wholeWord=false)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('<<', 2)">&lt;&lt;</a></td>
+  <td>décalage à gauche</td>
+  <td><a href="#" onclick="rechercheRapide(' << ', 3, wholeWord=false)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('>>', 2)">&gt;&gt;</a></td>
+  <td>décalage à droite</td>
+  <td><a href="#" onclick="rechercheRapide(' >> ', 3, wholeWord=false)">🔎</a></td>
+ </tr>
+</table>
+
+<u><b>Les opérateurs d'identité :</b></u>
+
+  Les opérateurs d'identité analysent si deux éléments font référence au même objet.
+
+<table border="0">
+ <tr>
+  <th>Opérateur</th>
+  <th>Signification</th>
+  <th></th>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('is :', 2)">is</a></td>
+  <td>identique</td>
+  <td><a href="#" onclick="rechercheRapide(' is ', 3, wholeWord=false)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('is not :', 2)">is not</a></td>
+  <td>non identique</td>
+  <td><a href="#" onclick="rechercheRapide(' is not ', 3, wholeWord=false)">🔎</a></td>
+ </tr>
+</table>
+
+<u><b>Les opérateurs d'appartenance :</b></u>
+
+  Les opérateurs d'appartenance analysent si un élément est dans un autre.
+
+<table border="0">
+ <tr>
+  <th>Opérateur</th>
+  <th>Signification</th>
+  <th></th>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('in :', 2)">in</a></td>
+  <td>appartient</td>
+  <td><a href="#" onclick="rechercheRapide('in', 3, wholeWord=false)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('not in :', 2)">not in</a></td>
+  <td>n'appartient pas</td>
+  <td><a href="#" onclick="rechercheRapide(' not in ', 3, wholeWord=false)">🔎</a></td>
+ </tr>
+</table>

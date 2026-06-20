@@ -1,33 +1,899 @@
 
 <u><b>str() f. ou o. (sting→chaine):</b></u>
-1.Retourne un type de donnée transformé en str.<a href="#" onclick="rechercheRapide('str(1)', 3)">🔎</a>
-Par défauld retourne ''. <a href="#" onclick="rechercheRapide('str()', 3)">🔎</a>
+1.Rend un type de donnée transformé en str.<a href="#" onclick="rechercheRapide('str(', 3)">🔎</a>
+Par défauld rend ''. <a href="#" onclick="rechercheRapide('str()', 3)">🔎</a>
 
 2.Objet de classe str.
 
 <u><b>int() f. ou o. (integer→entier):</b></u>
-1.Retourne un type de donnée transformé en int.<a href="#" onclick="rechercheRapide('int(', 3)">🔎</a>
-Par défauld retourne 0. <a href="#" onclick="rechercheRapide('int()', 3)">🔎</a>
+1.Rend un type de donnée transformé en int.<a href="#" onclick="rechercheRapide('int(', 3)">🔎</a>
+Par défauld rend 0. <a href="#" onclick="rechercheRapide('int()', 3)">🔎</a>
 
 2.Objet de classe int.
 
 <u><b>float() f. ou o. :</b></u>
-1.Retourne un type de donnée transformé en float.<a href="#" onclick="rechercheRapide('', 3)">🔎</a>
-Par défauld retourne 0.0 . <a href="#" onclick="rechercheRapide('float()', 3)">🔎</a>
+1.Rend un type de donnée transformé en float.<a href="#" onclick="rechercheRapide('float(', 3)">🔎</a>
+Par défauld rend 0.0 . <a href="#" onclick="rechercheRapide('float()', 3)">🔎</a>
 
 2.Objet de classe float.
 
-<u><b>list() f. ou o. :</b></u>
-Retourne un type de donnée transformé en list.<a href="#" onclick="rechercheRapide('str(1)', 3)">🔎</a>
-Par défauld retourne []. <a href="#" onclick="rechercheRapide('str()', 3)">🔎</a>
+<u><b>list() f. ou o. (liste):</b></u>
+1.Rend un type de donnée transformé en list.<a href="#" onclick="rechercheRapide('list(', 3)">🔎</a>
+Par défauld rend []. <a href="#" onclick="rechercheRapide('list()', 3)">🔎</a>
 
 2.Objet de classe list.
 
 <u><b>type() f. ou o. :</b></u>
-1. 1.Fonction qui renvoie le type d’un objet passé en paramètre avec le format &lt;class 'type'&gt;.<a href="#" onclick="rechercheRapide('type', 3)">🔎</a>
+1.Fonction qui renvoie le type d’un objet passé en paramètre avec le format &lt;class 'type'&gt;.<a href="#" onclick="rechercheRapide('type', 3)">🔎</a>
 La valeur de retour de type() est un objet de <b>type</b> tel que str ou int.
 type() nessecite 1 argument.
 En comparant la valeur de retour de type() avec n’importe quel type, vous pouvez vérifier si l’objet est de ce type. Il faut utiliser le mot-clé is.<a href="#" onclick="rechercheRapide('type(&quot;chaine&quot;) is', 3)">🔎</a>
-   2.Fonction qui crée une classe avec 3 arguments : une chaine qui définie le nom de la classe, un tuple qui donne le nom des classes parentes (éritage) et enfin un dictionnaire qui donne les attributs à la classe.
 
-2.Objet de classe type.
+2.Fonction qui crée une classe avec 3 arguments : une chaine qui définie le nom de la classe, un tuple qui donne le nom des classes parentes (éritage) et enfin un dictionnaire qui donne les attributs à la classe.
+
+3.Objet de classe type.
+
+<u><b>abs(x, /) :</b></u>
+
+Retourne la valeur absolue de l'argument.
+La valeur de retour est la même que celle d'entrée.
+
+<b>Paramètres :</b>
+
+    x : nombre entier, flottant ou complexe
+
+<u><b>round(number, ndigits=None) :</b></u>
+
+Arrondit un nombre à un nombre de décimales donné.
+La valeur de retour est un entier si ndigits est omis ou vaut None. 
+Sinon, la valeur de retour est du même type que le nombre. 
+ndigits peut être négatif.
+
+<b>Paramètres :</b>
+
+    number : nombre à arrondir
+
+    ndigits : nombre de décimales à conserver
+
+<u><b>pow(base, exp, mod=None) :</b></u>
+
+Calcule une puissance.
+Equivalant à x ** y .
+
+<b>Paramètres :</b>
+
+    base : nombre de départ
+    exp : exposant
+    mod : modulo optionnel
+
+<u><b>divmod(x, y, /)</b></u>
+
+Retourne simultanément le quotient entier et le reste dans le tuple (x//y, x%y).
+
+<b>Paramètres :</b>
+
+    x : dividende
+    y : diviseur
+
+<u><b>sum(iterable, /, start=0)</b></u>
+
+Renvoie la somme d'une valeur initiale (par défaut : 0) et d'un itérable de nombres. Si l'itérable est vide, renvoie la valeur initiale.
+
+<b>Paramètres :</b>
+
+    iterable : séquence de nombres
+    start : valeur initiale
+
+
+<u><b>min(*args, key=None, default=None)</b></u>
+
+Avec un seul argument itérable, retourne son plus petit élément. Avec deux arguments ou plus, retourne le plus petit argument.
+L'argument key applique aux éléments de l'iterable une fonction puis renvoie le résultat.
+L'argument default donne une valeur par defaut si l'iterable est vide.
+
+<b>Paramètres :</b>
+
+    *args ou un itérable
+    key : fonction de comparaison
+    default : valeur de secours
+
+
+<u><b>max(*args, key=None, default=None)</b></u>
+
+Avec un seul argument itérable, retourne son plus grand élément. Avec deux arguments ou plus, retourne le plus grand argument.
+L'argument key applique aux éléments de l'iterable une fonction puis renvoie le résultat.
+L'argument default donne une valeur par defaut si l'iterable est vide.
+
+<b>Paramètres :</b>
+
+    *args ou un itérable
+    key : fonction de comparaison
+    default : valeur de secours
+
+
+<u><b>int(x=0, base=10)</b></u>
+
+Convertit un nombre ou une chaîne de caractères en entier, ou renvoie 0 si aucun argument n'est fourni. Pour les nombres à virgule flottante, int tronque vers zéro.
+Si x n'est pas un nombre ou si une base est spécifiée, alors x doit être une chaîne de caractères, un ensemble d'octets ou une instance de tableau d'octets représentant un entier littéral dans la base spécifiée. L'entier littéral peut être précédé de '+' ou '-' et entouré d'espaces. La base par défaut est 10. Les bases valides sont 0 et 2 à 36. La base 0 signifie que la base de la chaîne est interprétée comme un entier littéral.
+
+<b>Paramètres :</b>
+
+    x : valeur à convertir
+    base : base numérique pour les chaînes et autre
+
+
+<u><b>float(x=0, /) :</b></u>
+
+Convertit une chaîne ou un entier en nombre flottant.
+
+<b>Paramètres :</b>
+
+    x : valeur à convertir
+
+<u><b>complex(real=0, imag=0) :</b></u>
+
+Crée un nombre complexe d'une partie réelle et d'une partie imaginaire facultative. Ceci est équivalent à (real + imag*1j), où imag vaut 0 par défaut.
+
+<b>Paramètres :</b>
+
+    real : partie réelle
+    imag : partie imaginaire
+
+
+<u><b>str(object='') :
+str(bytes_or_buffer[, encoding[, errors]]) :</b></u>
+
+Convertit un objet en chaîne de caractères. 
+Si encoding ou errors est spécifié, alors l'objet doit contenir des données binaires (des octets) qui seront décodées selon l'encodage et la gestion d'erreur indiqués.
+
+<b>Paramètres :</b>
+
+    object : objet à convertir
+    bytes_or_buffer : données binaires à décoder
+    encoding : encodage utilisé pour décoder
+    errors : gestion des erreurs de décodage
+
+
+<u><b>bool(x) -> bool :</b></u>
+
+Convertit en booléen en renvoyant True si x est True, False sinon. Ce sont les deux seules valeurs de retour.
+
+<b>Paramètres :</b>
+
+    x : valeur à évaluer
+
+<u><b>bytes(source=b'', encoding=None, errors='strict')</b></u>
+
+Crée un objet binaire immuable.
+
+bytes() → crée une séquence vide.
+bytes(n) → crée n octets initialisés à 0.
+bytes(iterable) → crée des octets à partir d'un itérable d'entiers entre 0 et 255.bytes
+(texte, encoding) → encode une chaîne de caractères en octets.bytes
+(objet_buffer) → crée une copie immuable d'un objet compatible avec l'API buffer (par exemple bytearray).
+
+<b>Paramètres :</b>
+
+    
+
+<u><b>bytearray(source=b'', encoding=None, errors='strict')</b></u>
+
+Crée un tableau binaire modifiable.
+
+bytearray() → tableau d'octets vide.
+bytearray(n) → crée n octets initialisés à 0.
+bytearray(iterable) → à partir d'entiers entre 0 et 255.
+bytearray(texte, encoding) → encode une chaîne de caractères.
+bytearray(bytes_ou_buffer) → crée une copie modifiable.
+
+
+<b>Paramètres :</b>
+
+    source : données source
+    encoding : encodage
+    errors : gestion des erreurs
+
+Fonctions sur les collections
+<u><b>len(obj, /)</b></u>
+
+Retourne le nombre d'éléments contenus dans un conteneur.
+
+<b>Paramètres :</b>
+
+    obj : collection ou séquence
+
+<u><b>sorted(iterable, /, *, key=None, reverse=False)</b></u>
+
+ Renvoie une nouvelle liste où les anciens éléments sonts triés par ordre croissant.
+ Une fonction de tri personnalisée peut être fournie pour définir l'ordre de tri, et l'option reverse  peut être activée pour obtenir un résultat trié par ordre décroissant.
+
+<b>Paramètres :</b>
+
+    iterable : données à trier
+    key : fonction de tri
+    reverse : ordre décroissant
+
+<u><b>reversed(sequence, /)</b></u>
+
+Retourne l'ordre des objets d'un itérateur.
+
+<b>Paramètres :</b>
+
+    sequence : séquence
+
+<u><b>enumerate(iterable, start=0)</b></u>
+
+Parcoure un iterable tout en récupérant à la fois l'indice et la valeur. Par défautn, l'énumerement débute à l'élément 0.
+
+<b>Paramètres :</b>
+
+    iterable : données
+    start : indice initial
+
+<u><b>zip(*iterables, strict=False)</b></u>
+
+Assemble plusieurs itérables.
+
+<b>Paramètres :</b>
+
+    *iterables : séquences à combiner.
+
+    strict : vérifie les longueurs.
+
+<u><b>map(function, iterable, *iterables)</b></u>
+
+Applique une fonction à chaque élément.
+
+<b>Paramètres :</b>
+
+    function : fonction à appliquer.
+
+    iterable(s) : données.
+
+<u><b>filter(function, iterable)</b></u>
+
+Filtre des éléments.
+
+<b>Paramètres :</b>
+
+    function : condition.
+
+    iterable : données.
+
+<u><b>all(iterable)</b></u>
+
+Retourne True si tous les éléments sont vrais.
+
+<b>Paramètres :</b>
+
+    iterable : séquence testée.
+
+<u><b>any(iterable)</b></u>
+
+Retourne True si au moins un élément est vrai.
+
+<b>Paramètres :</b>
+
+    iterable : séquence testée.
+
+Fonctions de création de collections
+<u><b>list(iterable=())</b></u>
+
+Crée une liste.
+
+<b>Paramètres :</b>
+
+    iterable : données initiales.
+
+<u><b>tuple(iterable=())</b></u>
+
+Crée un tuple.
+
+<b>Paramètres :</b>
+
+    iterable : données initiales.
+
+<u><b>set(iterable=())</b></u>
+
+Crée un ensemble unique.
+
+<b>Paramètres :</b>
+
+    iterable : données initiales.
+
+<u><b>frozenset(iterable=())</b></u>
+
+Crée un ensemble immuable.
+
+<b>Paramètres :</b>
+
+    iterable : données initiales.
+
+<u><b>dict(**kwargs)</b></u>
+
+Crée un dictionnaire.
+
+<b>Paramètres :</b>
+
+    mapping ou paires clé/valeur.
+
+    **kwargs : clés nommées.
+
+Fonctions d'entrée/sortie
+<u><b>print(*objects, sep=' ', end='\n', file=None, flush=False)</b></u>
+
+Affiche des données.
+
+<b>Paramètres :</b>
+
+    *objects : objets à afficher.
+
+    sep : séparateur.
+
+    end : terminaison.
+
+    file : flux cible.
+
+    flush : vidage immédiat du buffer.
+
+<u><b>input(prompt='')</b></u>
+
+Lit une saisie utilisateur.
+
+<b>Paramètres :</b>
+
+    prompt : message affiché.
+
+<u><b>open(file, mode='r', buffering=-1, encoding=None, errors=None)</b></u>
+
+Ouvre un fichier.
+
+<b>Paramètres :</b>
+
+    file : chemin du fichier.
+
+    mode : mode d'accès.
+
+    buffering : gestion du tampon.
+
+    encoding : encodage.
+
+    errors : gestion des erreurs.
+
+Fonctions d'inspection
+<u><b>type(obj)</b></u>
+
+Retourne le type d'un objet.
+
+<b>Paramètres :</b>
+
+    obj : objet à analyser.
+
+<u><b>isinstance(obj, classinfo)</b></u>
+
+Vérifie le type réel d'un objet.
+
+<b>Paramètres :</b>
+
+    obj : objet.
+
+    classinfo : type ou tuple de types.
+
+<u><b>issubclass(cls, classinfo)</b></u>
+
+Vérifie un héritage.
+
+<b>Paramètres :</b>
+
+    cls : classe.
+
+    classinfo : classe parente.
+
+<u><b>id(obj)</b></u>
+
+Retourne l'identifiant unique d'un objet.
+
+<b>Paramètres :</b>
+
+    obj : objet concerné.
+
+<u><b>hash(obj)</b></u>
+
+Retourne la valeur de hachage.
+
+<b>Paramètres :</b>
+
+    obj : objet hashable.
+
+Fonctions sur les attributs
+<u><b>getattr(obj, name, default=None)</b></u>
+
+Récupère un attribut.
+
+<b>Paramètres :</b>
+
+    obj : objet cible.
+
+    name : nom de l'attribut.
+
+    default : valeur de secours.
+
+<u><b>setattr(obj, name, value)</b></u>
+
+Modifie ou crée un attribut.
+
+<b>Paramètres :</b>
+
+    obj : objet cible.
+
+    name : nom.
+
+    value : nouvelle valeur.
+
+<u><b>hasattr(obj, name)</b></u>
+
+Vérifie l'existence d'un attribut.
+
+<b>Paramètres :</b>
+
+    obj : objet.
+
+    name : attribut recherché.
+
+<u><b>delattr(obj, name)</b></u>
+
+Supprime un attribut.
+
+<b>Paramètres :</b>
+
+    obj : objet.
+
+    name : attribut.
+
+Fonctions d'itération
+<u><b>iter(object, sentinel=None)</b></u>
+
+Crée un itérateur.
+
+<b>Paramètres :</b>
+
+    object : objet itérable.
+
+    sentinel : valeur d'arrêt optionnelle.
+
+next(iterator, default=None)
+
+Retourne l'élément suivant.
+
+<b>Paramètres :</b>
+
+    iterator : itérateur.
+
+    default : valeur par défaut.
+
+Fonctions de représentation
+repr(obj)
+
+Retourne une représentation technique.
+
+<b>Paramètres :</b>
+
+    obj : objet à représenter.
+
+ascii(obj)
+
+Version ASCII de repr().
+
+<b>Paramètres :</b>
+
+    obj : objet.
+
+format(value, format_spec='')
+
+Formate une valeur.
+
+<b>Paramètres :</b>
+
+    value : donnée.
+
+    format_spec : spécification de format.
+
+bin(x)
+
+Conversion en binaire.
+
+<b>Paramètres :</b>
+
+    x : entier.
+
+oct(x)
+
+Conversion en octal.
+
+<b>Paramètres :</b>
+
+    x : entier.
+
+hex(x)
+
+Conversion en hexadécimal.
+
+<b>Paramètres :</b>
+
+    x : entier.
+
+Fonctions d'exécution dynamique
+eval(expression, globals=None, locals=None)
+
+Évalue une expression Python.
+
+<b>Paramètres :</b>
+
+    expression : code à évaluer.
+
+    globals : variables globales.
+
+    locals : variables locales.
+
+exec(object, globals=None, locals=None)
+
+Exécute du code Python.
+
+<b>Paramètres :</b>
+
+    object : code source.
+
+    globals : contexte global.
+
+    locals : contexte local.
+
+compile(source, filename, mode)
+
+Compile du code Python.
+
+<b>Paramètres :</b>
+
+    source : code.
+
+    filename : nom logique.
+
+    mode : 'exec', 'eval', 'single'.
+
+Fonctions liées aux classes
+super(type, object=None)
+
+Accède à la classe parente.
+
+<b>Paramètres :</b>
+
+    type : classe courante.
+
+    object : instance.
+
+property(fget=None, fset=None, fdel=None, doc=None)
+
+Crée une propriété.
+
+<b>Paramètres :</b>
+
+    fget : getter.
+
+    fset : setter.
+
+    fdel : deleter.
+
+    doc : documentation.
+
+classmethod(function)
+
+Transforme une méthode en méthode de classe.
+
+<b>Paramètres :</b>
+
+    function : méthode concernée.
+
+staticmethod(function)
+
+Transforme une méthode en méthode statique.
+
+<b>Paramètres :</b>
+
+    function : méthode concernée.
+
+Fonctions diverses
+help(object=None)
+
+Affiche la documentation.
+
+<b>Paramètres :</b>
+
+    object : élément documenté.
+
+dir(object=None)
+
+Liste les attributs disponibles.
+
+<b>Paramètres :</b>
+
+    object : objet à inspecter.
+
+vars(object=None)
+
+Retourne le dictionnaire d'attributs.
+
+<b>Paramètres :</b>
+
+    object : objet cible.
+
+callable(obj)
+
+Indique si l'objet est appelable.
+
+<b>Paramètres :</b>
+
+    obj : objet testé.
+
+breakpoint(*args, **kwargs)
+
+Déclenche le débogueur Python.
+
+<b>Paramètres :</b>
+
+    *args, **kwargs : transmis au débogueur.
+
+copyright(), credits(), license()
+
+Fonctions interactives fournissant respectivement les informations de copyright, les crédits du projet Python et la licence du langage.
+
+<u><b>+  (addition) :</b></u>
+Opérateur arithmétique qui effectue une addition entre deux nombres ou une concaténation de deux chaînes de caractères.<a href="#" onclick="rechercheRapide(' + ', 3, wholeWord=false)">🔎</a> 
+Il se place entre deux éléments.
+
+<u><b>- (soustraction) :</b></u>
+Opérateur arithmétique qui effectue une soustraction entre deux nombres.<a href="#" onclick="rechercheRapide('5 - ', 3, wholeWord=false)">🔎</a>
+
+<u><b>* (multiplication) :</b></u>
+Opérateur arithmétique qui effectue une multiplication entre deux nombres ou répète une chaîne de caractères un nombre de fois donné.<a href="#" onclick="rechercheRapide(' * ', 3, wholeWord=false)">🔎</a>
+Il se place entre deux éléments.
+
+<u><b>** (puissance) :</b></u>
+Opérateur arithmétique qui calcule la puissance d'un nombre.<a href="#" onclick="rechercheRapide(' ** ', 3, wholeWord=false)">🔎</a>
+Il se place entre deux éléments.
+
+<u><b>/ (division) :</b></u>
+Opérateur arithmétique qui effectue une division et rend un résultat de type float.<a href="#" onclick="rechercheRapide('/', 3, wholeWord=false)">🔎</a>
+Il se place entre deux éléments.
+
+<u><b>// (division entière) :</b></u>
+Opérateur arithmétique qui rend le quotient entier d'une division euclidienne sous forme de int.<a href="#" onclick="rechercheRapide(' // ', 3, wholeWord=false)">🔎</a>
+Il se place entre deux éléments.
+
+<u><b>% (modulo) :</b></u>
+Opérateur arithmétique qui rend le reste d'une division euclidienne sous forme de int.<a href="#" onclick="rechercheRapide(' % ', 3, wholeWord=false)">🔎</a>
+Il se place entre deux éléments.
+
+<u><b>& (ET logique) :</b></u>
+Opérateur logique qui effectue un ET logique bit à bit.<a href="#" onclick="rechercheRapide('&', 3, wholeWord=false)">🔎</a>
+Il se place entre deux éléments.
+Le tableau ci-dessous illustre son fonctionnement : 
+
+<table>
+ <tr>
+  <th>  &  </th>
+  <th>  0  </th>
+  <th>  1  </th>
+ </tr>
+ <tr>
+  <th>  0  </th>
+  <td>  0  </td>
+  <td>  0  </td>
+ </tr>
+ <tr>
+  <th>  1  </th>
+  <td>  0  </td>
+  <td>  1  </td>
+ </tr>
+</table>
+
+<u><b>| (OU logique) :</b></u>
+Opérateur logique qui effectue un OU logique bit à bit.<a href="#" onclick="rechercheRapide('|', 3, wholeWord=false)">🔎</a>
+Il se place entre deux éléments.
+Le tableau ci-dessous illustre son fontionnement : 
+
+<table>
+ <tr>
+  <th>  |  </th>
+  <th>  0  </th>
+  <th>  1  </th>
+ </tr>
+ <tr>
+  <th>  0  </th>
+  <td>  0  </td>
+  <td>  1  </td>
+ </tr>
+ <tr>
+  <th>  1  </th>
+  <td>  1  </td>
+  <td>  1  </td>
+ </tr>
+</table>
+
+<u><b>^ (XOR logique) :</b></u>
+Opérateur logique qui effectue un OU exclusif logique bit à bit.<a href="#" onclick="rechercheRapide('^', 3, wholeWord=false)">🔎</a>
+Il se place entre deux éléments.
+Le tableau ci-dessous illustre son fontionnement : 
+
+<table>
+ <tr>
+  <th>  ^  </th>
+  <th>  0  </th>
+  <th>  1  </th>
+ </tr>
+ <tr>
+  <th>  0  </th>
+  <td>  0  </td>
+  <td>  1  </td>
+ </tr>
+ <tr>
+  <th>  1  </th>
+  <td>  1  </td>
+  <td>  0  </td>
+ </tr>
+</table>
+
+<u><b>~ (NON logique) :</b></u>
+Opérateur logique qui inverse les bits d'un nombre.<a href="#" onclick="rechercheRapide('~', 3, wholeWord=false)">🔎</a>
+Il se place devant son élément.
+En pratique il effectue l'opération -(x+1).
+
+<u><b><< :</b></u>
+Opérateur logique qui décale les bits d'un nombre vers la gauche.<a href="#" onclick="rechercheRapide('&lt;&lt;', 3, wholeWord=false)">🔎</a>
+Il se place entre deux éléments.
+Chaque décalage à gauche équivaut à multiplier le nombre par 2.
+
+<u><b>>> :</b></u>
+Opérateur logique qui décale les bits d'un nombre vers la droite.<a href="#" onclick="rechercheRapide('&gt;&gt;', 3, wholeWord=false)">🔎</a>
+Il se place entre deux éléments.
+Chaque décalage à droite équivaut à diviser le nombre par 2, tout en omettant les parties décimales et en mettant à 0 si le résultat est négatif.
+
+<u><b>== (égalité) :</b></u>
+Opérateur de comparaison qui vérifie si deux valeurs sont égales. Rend un booléen.<a href="#" onclick="rechercheRapide(' == ', 3, wholeWord=false)">🔎</a>
+Il se place entre deux éléments.
+
+<u><b>!= (différent de) :</b></u>
+Opérateur de comparaison qui vérifie si deux valeurs sont différentes. Rend un booléen.<a href="#" onclick="rechercheRapide(' != ', 3, wholeWord=false)">🔎</a>
+Il se place entre deux éléments.
+
+<u><b>< (inférieur) :</b></u>
+Opérateur de comparaison qui vérifie si une valeur est inférieure à une autre. Rend un booléen.<a href="#" onclick="rechercheRapide(' &lt; ', 3, wholeWord=false)">🔎</a>
+Il se place entre deux éléments.
+
+<u><b>> (supérieur) :</b></u>
+Opérateur de comparaison qui vérifie si une valeur est supérieure à une autre. Rend un booléen.<a href="#" onclick="rechercheRapide('&gt;', 3, wholeWord=false)">🔎</a>
+Il se place entre deux éléments.
+
+<u><b><= (inférieur ou égal) :</b></u>
+Opérateur de comparaison qui vérifie si une valeur est inférieure ou égale à une autre. Rend un booléen.<a href="#" onclick="rechercheRapide('&lt;=', 3, wholeWord=false)">🔎</a>
+Il se place entre deux éléments.
+
+<u><b>>= (supérieur ou égal) :</b></u>
+Opérateur de comparaison qui vérifie si une valeur est supérieure ou égale à une autre.<a href="#" onclick="rechercheRapide('&gt;=', 3, wholeWord=false)">🔎</a>
+Il se place entre deux éléments.
+
+<u><b>= (affectation) :</b></u>
+Opérateur d'affectation qui affecte une valeur à une variable.<a href="#" onclick="rechercheRapide('=', 3, wholeWord=false)">🔎</a>
+Il se place entre deux éléments.
+
+<u><b>+= :</b></u>
+Opérateur d'affectation qui ajoute une valeur à une variable puis réaffecte le résultat.<a href="#" onclick="rechercheRapide('+=', 3, wholeWord=false)">🔎</a>
+Il se place entre deux éléments.
+
+<u><b>-= :</b></u>
+Opérateur d'affectation qui soustrait une valeur à une variable puis réaffecte le résultat.<a href="#" onclick="rechercheRapide('-=', 3, wholeWord=false)">🔎</a>
+Il se place entre deux éléments.
+
+<u><b>*= :</b></u>
+Opérateur d'affectation qui multiplie une variable par une valeur puis réaffecte le résultat.<a href="#" onclick="rechercheRapide('*=', 3, wholeWord=false)">🔎</a>
+Il se place entre deux éléments.
+
+<u><b>**= :</b></u>
+Opérateur d'affectation qui élève une variable à une puissance puis réaffecte le résultat.<a href="#" onclick="rechercheRapide('**=', 3, wholeWord=false)">🔎</a>
+Il se place entre deux éléments.
+
+<u><b>/= :</b></u>
+Opérateur d'affectation qui divise une variable par une valeur puis réaffecte le résultat.<a href="#" onclick="rechercheRapide('/=', 3, wholeWord=false)">🔎</a>
+Il se place entre deux éléments.
+
+<u><b>//= :</b></u>
+Opérateur d'affectation qui effectue une division entière puis réaffecte le résultat.<a href="#" onclick="rechercheRapide('//=', 3, wholeWord=false)">🔎</a>
+Il se place entre deux éléments.
+
+<u><b>%= :</b></u>
+Opérateur d'affectation qui effectue un modulo puis réaffecte le résultat.<a href="#" onclick="rechercheRapide('%=', 3, wholeWord=false)">🔎</a>
+Il se place entre deux éléments.
+
+<u><b>&= :</b></u>
+Opérateur d'affectation qui effectue un ET logique bit à bit puis réaffecte le résultat.<a href="#" onclick="rechercheRapide('&=', 3, wholeWord=false)">🔎</a>
+Il se place entre deux éléments.
+
+<u><b>^= :</b></u>
+Opérateur d'affectation qui effectue un OU exclusif logique bit à bit puis réaffecte le résultat.<a href="#" onclick="rechercheRapide('^=', 3, wholeWord=false)">🔎</a>
+Il se place entre deux éléments.
+
+<u><b>|= :</b></u>
+Opérateur d'affectation qui effectue un OU logique bit à bit puis réaffecte le résultat.<a href="#" onclick="rechercheRapide('|=', 3, wholeWord=false)">🔎</a>
+Il se place entre deux éléments.
+
+<u><b><<= :</b></u>
+Opérateur d'affectation qui effectue un décalage binaire à gauche puis réaffecte le résultat.<a href="#" onclick="rechercheRapide('&lt;&lt;=', 3, wholeWord=false)">🔎</a>
+Il se place entre deux éléments.
+
+<u><b>>>= :</b></u>
+Opérateur d'affectation qui effectue un décalage binaire à droite puis réaffecte le résultat.<a href="#" onclick="rechercheRapide('&gt;&gt;=', 3, wholeWord=false)">🔎</a>
+Il se place entre deux éléments.
+
+<u><b>and :</b></u>
+Opérateur booléen qui rend True si les deux expressions sont vraies.<a href="#" onclick="rechercheRapide('and', 3, wholeWord=false)">🔎</a>
+Il se place entre deux éléments.
+Le tableau ci-dessous illustre son fontionnement : 
+
+<table>
+ <tr>
+  <th>and</th>
+  <th> True </th>
+  <th> False </th>
+ </tr>
+ <tr>
+  <th> True </th>
+  <td> True </td>
+  <td> False </td>
+ </tr>
+ <tr>
+  <th> False </th>
+  <td> False </td>
+  <td> False </td>
+ </tr>
+</table>
+
+<u><b>or :</b></u>
+Opérateur booléen qui rend True si au moins une expression est vraie.<a href="#" onclick="rechercheRapide('or', 3, wholeWord=false)">🔎</a>
+Il se place entre deux éléments.
+Le tableau ci-dessous illustre son fontionnement : 
+
+<table>
+ <tr>
+  <th>or</th>
+  <th> True </th>
+  <th> False </th>
+ </tr>
+ <tr>
+  <th> True </th>
+  <td> True </td>
+  <td> True </td>
+ </tr>
+ <tr>
+  <th> False </th>
+  <td> True </td>
+  <td> False </td>
+ </tr>
+</table>
+
+<u><b>not :</b></u>
+Opérateur booléen qui inverse la valeur booléenne d'une expression (True et False).<a href="#" onclick="rechercheRapide('not', 3, wholeWord=false)">🔎</a>
+Il se place devant son élément.
+
+<u><b>is :</b></u>
+Opérateur d'identité qui vérifie si deux noms référencent exactement le même objet.<a href="#" onclick="rechercheRapide('is', 3)">🔎</a>
+Il se place entre deux éléments.
+
+<u><b>is not :</b></u>
+Opérateur d'identité qui vérifie si deux noms ne référencent pas le même objet.<a href="#" onclick="rechercheRapide('is not', 3)">🔎</a>
+Il se place entre deux éléments.
+
+<u><b>in :</b></u>
+Opérateur d'appartenance qui vérifie l'appartenance d'un élément à une séquence ou une collection.<a href="#" onclick="rechercheRapide('in', 3)">🔎</a>
+Il se place entre deux éléments.
+
+<u><b>not in :</b></u>
+Opérateur d'appartenance qui vérifie la non-appartenance d'un élément à une séquence ou une collection.<a href="#" onclick="rechercheRapide('not in', 3)">🔎</a>
+Il se place entre deux éléments.
