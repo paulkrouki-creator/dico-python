@@ -1,159 +1,326 @@
+{% load static %}
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="style.css">
-    <title>dico–python</title>
-  </head>
-  <body>
+<html lang="fr">
+
+<head>
+
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>dico–python</title>
+
+  <link
+    rel="stylesheet"
+    href="{% static 'css/style.css' %}"
+  >
+
+</head>
+
+<body>
+
+  <!-- =========================
+       OPTIONS
+  ========================== -->
+
+  <div class="options">
 
     <label id="whole-word_only">
-      <input type="checkbox" id="whole-word-only" />
+
+      <input
+        type="checkbox"
+        id="whole-word-only"
+      >
+
       Mots entiers uniquement
+
     </label>
 
     <label id="respecter">
-      <input type="checkbox" id="respect-accents" />
-      respecter accents et diacritique
+
+      <input
+        type="checkbox"
+        id="respect-accents"
+      >
+
+      Respecter accents et diacritiques
+
     </label>
 
-<!--    <label id="loupe">
-    <input type="checkbox" id="loupe-box" onFocus="loupe()" />
-    loupe
-   </label>-->
+  </div>
 
+  <!-- =========================
+       LAYOUT PRINCIPAL
+  ========================== -->
 
-    <div class="search-message" id="message-general"></div>
-    <div id="rechercher_generalement">
-      <input type="text" id="searchInput-general" spellcheck="true" placeholder="Chercher généralement" autocomplete="off"/>
-      <button id="searchButton-general">Chercher</button>
-      <span class="counter" id="counter-general"></span>
+  <div class="layout">
+
+    <!-- =========================
+         GENERAL
+    ========================== -->
+
+    <div class="panel">
+
+      <div
+        class="search-message"
+        id="message-general"
+      ></div>
+
+      <div
+        id="rechercher_generalement"
+        class="search-bar"
+      >
+
+        <input
+          type="text"
+          id="searchInput-general"
+          spellcheck="true"
+          placeholder="Chercher généralement"
+          autocomplete="off"
+        >
+
+        <button id="searchButton-general">
+          Chercher
+        </button>
+
+        <span
+          class="counter"
+          id="counter-general"
+        ></span>
+
+      </div>
+
+      <div
+        id="general"
+        class="content-panel"
+      >
+
+        {% include "general.html" %}
+
+      </div>
+
     </div>
-    <div id="general" style="width: 426px; height: 700px; overflow-y: scroll;"></div>
 
-    <div class="search-message" id="message-definitions"></div>
-    <div id="rechercher_definition">
-      <input type="text" id="searchInput-definitions" spellcheck="true" placeholder="Chercher une définition" />
-      <button id="searchButton-definitions">Chercher</button>
-      <span class="counter" id="counter-definitions"></span>
+    <!-- =========================
+         DEFINITIONS
+    ========================== -->
+
+    <div class="panel">
+
+      <div
+        class="search-message"
+        id="message-definitions"
+      ></div>
+
+      <div
+        id="rechercher_definition"
+        class="search-bar"
+      >
+
+        <input
+          type="text"
+          id="searchInput-definitions"
+          spellcheck="true"
+          placeholder="Chercher une définition"
+          autocomplete="off"
+        >
+
+        <button id="searchButton-definitions">
+          Chercher
+        </button>
+
+        <span
+          class="counter"
+          id="counter-definitions"
+        ></span>
+
+      </div>
+
+      <div
+        id="definitions"
+        class="content-panel"
+      >
+
+        {% include "definitions.html" %}
+
+      </div>
+
     </div>
-    <div id="definitions" style="width: 426px; height: 700px; overflow-y: scroll;"></div>
 
-    <div class="search-message" id="message-code"></div>
-    <div id="rechercher_exemple">
-      <input type="text" id="searchInput-code" spellcheck="true" placeholder="Chercher un exemple" />
-      <button id="searchButton-code">Chercher</button>
-      <span class="counter" id="counter-code"></span>
+    <!-- =========================
+         CODE
+    ========================== -->
+
+    <div class="panel">
+
+      <div
+        class="search-message"
+        id="message-code"
+      ></div>
+
+      <div
+        id="rechercher_exemple"
+        class="search-bar"
+      >
+
+        <input
+          type="text"
+          id="searchInput-code"
+          spellcheck="true"
+          placeholder="Chercher un exemple"
+          autocomplete="off"
+        >
+
+        <button id="searchButton-code">
+          Chercher
+        </button>
+
+        <span
+          class="counter"
+          id="counter-code"
+        ></span>
+
+      </div>
+
+      <div
+        id="code"
+        class="content-panel code-panel"
+      >
+
+        {% include "code.html" %}
+
+      </div>
+
     </div>
-    <div id="code" style="width: 426px; height: 700px; overflow-y: scroll; overflow-x: scroll;"></div>
-    <script>
-// Exécuter la requête dès que la page est chargée
-document.addEventListener("DOMContentLoaded", async () => {
-	try {
-        // Remplace "general.html" par le chemin vers ton fichier
-        const response = await fetch("general.html");
-        if (!response.ok) {
-            throw new Error("Fichier introuvable ou erreur de chargement.");
-        }
-        const htmlContent = await response.text();
-        document.getElementById("general").innerHTML = htmlContent;
-    } catch (error) {
-        console.error("Erreur :", error);
-        document.getElementById("general").innerHTML =`<p style="color: red;">Erreur : ${error.message}</p>`;
-    }
-});
 
-// Exécuter la requête dès que la page est chargée
-document.addEventListener("DOMContentLoaded", async () => {
-	try {
-        // Remplace "definitions.html" par le chemin vers ton fichier
-        const response = await fetch("definitions.html");
-        if (!response.ok) {
-            throw new Error("Fichier introuvable ou erreur de chargement.");
-        }
-        const htmlContent = await response.text();
-        document.getElementById("definitions").innerHTML = htmlContent;
-    } catch (error) {
-        console.error("Erreur :", error);
-        document.getElementById("definitions").innerHTML =`<p style="color: red;">Erreur : ${error.message}</p>`;
-    }
-});
+  </div>
 
-// Exécuter la requête dès que la page est chargée
-document.addEventListener("DOMContentLoaded", async () => {
-	try {
-        // Remplace "code.html" par le chemin vers ton fichier
-        const response = await fetch("code.html");
-        if (!response.ok) {
-            throw new Error("Fichier introuvable ou erreur de chargement.");
-        }
-        const htmlContent = await response.text();
-        document.getElementById("code").innerHTML = htmlContent;
-    } catch (error) {
-        console.error("Erreur :", error);
-        document.getElementById("code").innerHTML =`<p style="color: red;">Erreur : ${error.message}</p>`;
-    }
-});
-	</script>
-    <script src="search.js"></script>
-    <script type="text/javascript">
-function voirAussi(element) {
-  // Récupère tous les éléments ayant la même classe que le paramètre
-  const elements = document.getElementsByClassName(element);
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
 
-  // Parcourt chaque élément et applique display = 'block'
-  for (let i = 0; i < elements.length; i++) {
-    elements[i].style.display = 'inline';
-  }
+  <script src="{% static 'js/search.js' %}"></script>
+
+  <script>
+
+    // =========================
+    // VOIR AUSSI
+    // =========================
+
+    function voirAussi(classe) {
+      const elements = document.getElementsByClassName(classe);
+
+      if (elements.length === 0) {
+          return;
+      }
+
+      const afficher = elements[0].style.display === "none";
+
+      for (let i = 0; i < elements.length; i++) {
+          elements[i].style.display = afficher ? "inline" : "none";
+      }
+    }
+
+// =========================
+// COLORATION PYTHON
+// =========================
+
+function escapeHtml(text) {
+
+  return text
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
 }
 
-const codeDiv = document.getElementById("code");
-let content = codeDiv.textContent;
+function colorerLigne(line) {
 
-// Échapper le HTML
-content = content
-  .replace(/&/g, "&amp;")
-  .replace(/</g, "&lt;")
-  .replace(/>/g, "&gt;");
+  // Echappe HTML
+  line = escapeHtml(line);
 
-// Coloration en un seul passage
-content = content.replace(
-  /(#.*$)|([.\s])([a-zA-Z_-]+)(?=\()|\(([^()\n]*)\)|\[([^[\]\n]*)\]|\{([^{}\n]*)\}/gm,
-  (match, comment, prefix, func, p1, p2, p3) => {
+  // =========================
+  // TRACEBACK
+  // =========================
 
-    // Commentaires
-    if (comment) {
-      return `<span style="color: purple;">${comment}</span>`;
-    }
-
-//    // Fonctions
-//    if (func) {
-//      return `${prefix}<span style="color: #208585;">${func}</span>`;
-//    }
-
-//    // Parenthèses / crochets / accolades
-//    const inner = p1 || p2 || p3;
-//    if (inner !== undefined) {
-//      const open = match[0];
-//      const close = match[match.length - 1];
-//      return `${open}<span style="color: #E38F09;">${inner}</span>${close}`;
-//    }
-
-    return match;
+  if (/^Traceback/.test(line)) {
+    return `<span class="py-error">${line}</span>`;
   }
+
+  // =========================
+  // FILE
+  // =========================
+
+  if (/^ *File ".*", line \d+/.test(line)) {
+    return `<span class="py-error">${line}</span>`;
+  }
+
+  // =========================
+  // ERREURS PYTHON
+  // =========================
+
+  if (/^([A-Za-z]+Error|[A-Za-z]+Exception):/.test(line)) {
+    return `<span class="py-error">${line}</span>`;
+  }
+
+  // =========================
+  // COMMENTAIRES
+  // =========================
+
+  line = line.replace(
+    /#.*$/g,
+    '<span class="py-comment">$&</span>'
+  );
+
+  // =========================
+  // POINTS DE SUSPENSION
+  // =========================
+
+  line = line.replace(
+    /\.\.\./g,
+    '<span class="py-dots">...</span>'
+  );
+
+  // =========================
+  // PROMPT PYTHON
+  // =========================
+
+  line = line.replace(
+    /^&gt;&gt;&gt;/,
+    '<span class="py-prompt">&gt;&gt;&gt;</span>'
+  );
+
+  return line;
+}
+
+function colorerPython() {
+
+  const codeDiv = document.getElementById("code");
+
+  if (!codeDiv) return;
+
+  const lignes = codeDiv.textContent.split("\n");
+
+  const resultat = lignes.map(
+    colorerLigne
+  );
+
+  codeDiv.innerHTML = resultat.join("\n");
+}
+
+// =========================
+// DOM READY
+// =========================
+
+document.addEventListener(
+  "DOMContentLoaded",
+  colorerPython
 );
 
-codeDiv.innerHTML = content;
-//const checkbox = document.getElementById("loupe-box");
-//const generalDiv = document.getElementById("general");
+  </script>
 
-//generalDiv.addEventListener("mouseover", function () {
-//  if (checkbox.checked) {
-//    alert("survol general");
-//  }
-//});
+</body>
 
-    </script>
-
-  </body>
 </html>
