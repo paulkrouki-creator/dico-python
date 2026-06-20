@@ -1,4 +1,3 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -95,12 +94,7 @@
 
       <div
         id="general"
-        class="content-panel"
-      >
-
-        {% include "general.html" %}
-
-      </div>
+        class="content-panel"></div>
 
     </div>
 
@@ -142,11 +136,7 @@
       <div
         id="definitions"
         class="content-panel"
-      >
-
-        {% include "definitions.html" %}
-
-      </div>
+      ></div>
 
     </div>
 
@@ -188,11 +178,7 @@
       <div
         id="code"
         class="content-panel code-panel"
-      >
-
-        {% include "code.html" %}
-
-      </div>
+      ></div>
 
     </div>
 
@@ -320,6 +306,55 @@ document.addEventListener(
 );
 
   </script>
+  <script>
+// Exécuter la requête dès que la page est chargée
+document.addEventListener("DOMContentLoaded", async () => {
+	try {
+        // Remplace "general.html" par le chemin vers ton fichier
+        const response = await fetch("general.html");
+        if (!response.ok) {
+            throw new Error("Fichier introuvable ou erreur de chargement.");
+        }
+        const htmlContent = await response.text();
+        document.getElementById("general").innerHTML = htmlContent;
+    } catch (error) {
+        console.error("Erreur :", error);
+        document.getElementById("general").innerHTML =`<p style="color: red;">Erreur : ${error.message}</p>`;
+    }
+});
+
+// Exécuter la requête dès que la page est chargée
+document.addEventListener("DOMContentLoaded", async () => {
+	try {
+        // Remplace "definitions.html" par le chemin vers ton fichier
+        const response = await fetch("definitions.html");
+        if (!response.ok) {
+            throw new Error("Fichier introuvable ou erreur de chargement.");
+        }
+        const htmlContent = await response.text();
+        document.getElementById("definitions").innerHTML = htmlContent;
+    } catch (error) {
+        console.error("Erreur :", error);
+        document.getElementById("definitions").innerHTML =`<p style="color: red;">Erreur : ${error.message}</p>`;
+    }
+});
+
+// Exécuter la requête dès que la page est chargée
+document.addEventListener("DOMContentLoaded", async () => {
+	try {
+        // Remplace "code.html" par le chemin vers ton fichier
+        const response = await fetch("code.html");
+        if (!response.ok) {
+            throw new Error("Fichier introuvable ou erreur de chargement.");
+        }
+        const htmlContent = await response.text();
+        document.getElementById("code").innerHTML = htmlContent;
+    } catch (error) {
+        console.error("Erreur :", error);
+        document.getElementById("code").innerHTML =`<p style="color: red;">Erreur : ${error.message}</p>`;
+    }
+});
+	</script>
 
 </body>
 
