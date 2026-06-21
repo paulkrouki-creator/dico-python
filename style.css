@@ -97,13 +97,14 @@ div#code {
   white-space: pre-wrap;
   height: 75vh;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  font-size: 14px;
+  font-family: Consolas, monaco, monospace;
+
 }
 
 div#code,
 div#code * {
-  font-family: sans-serif;
-  font-size: 15px;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
 /* =========================
