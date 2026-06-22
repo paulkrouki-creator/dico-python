@@ -263,20 +263,24 @@ document.addEventListener("DOMContentLoaded", () => {
         const search = searches[colonne];
         if (!search) return;
 
+        // 🔥 applique le paramètre "mots entiers uniquement"
         const wholeWordCheckbox = document.getElementById("whole-word-only");
         if (wholeWordCheckbox) {
             wholeWordCheckbox.checked = wholeWord;
         }
 
+        // met à jour l’input visuellement
         if (search.input) {
             search.input.value = term;
         }
 
+        // lance la recherche validée
         if (typeof search.validateSearch === "function") {
             search.validateSearch(term);
         }
 
-        const element = document.getElementById(ids[colonne]);
+        // 🔽 scroll vers la colonne avec offset
+        const element = document.getElementById(colonne);
         if (element) {
             const yOffset = -20;
             const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
