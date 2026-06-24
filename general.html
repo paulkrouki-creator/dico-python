@@ -1,20 +1,20 @@
 
 <u><b>Les types de données :</b></u>
 
-  En Python, les types de données permettent de représenter et de manipuler différentes catégories d’informations. Parmi les types de base, on trouve les entiers (<a href="#" onclick="rechercheRapide('int (nombres entiers):', 1)">int</a>), utilisés pour les nombres sans partie décimale, les nombres décimaux (<a href="#" onclick="rechercheRapide('float (nombres décimaux):', 1)">float</a>) pour les valeurs décimales, les chaînes de caractères (<a href="#" onclick="rechercheRapide('str :', 1)">str</a>) pour le texte, et les booléens (<a href="#" onclick="rechercheRapide('bool :', 1)">bool</a>) qui prennent les valeurs True ou False. Python propose également des structures de données plus complexes, comme les listes (<a href="#" onclick="rechercheRapide('list :', 1)">list</a>), qui stockent des collections ordonnées et modifiables d’éléments, les tuples (<a href="#" onclick="rechercheRapide('tuple :', 1)">tuple</a>), similaires aux listes mais immuables, les ensembles (<a href="#" onclick="rechercheRapide('set :', 1)">set</a>), qui contiennent des éléments uniques, et les dictionnaires (<a href="#" onclick="rechercheRapide('dict', 1)">dict</a>), qui associent des clés à des valeurs. Grâce à cette diversité de types de données, Python permet de développer des programmes flexibles et adaptés à de nombreux besoins, tout en facilitant la gestion et l’organisation des informations.
-  On peut tester le type d'un objet avec la fontion <a href="#" onclick="rechercheRapide('type() f. ou o. :', 2)">type()</a>.
+  En Python, les types de données permettent de représenter et de manipuler différentes catégories d’informations. Parmi les types de base, on trouve les entiers (<a href="#" onclick="rechercheRapide('int (nombres entiers):', 1)">int</a>), utilisés pour les nombres sans partie décimale ; les nombres décimaux (<a href="#" onclick="rechercheRapide('float (nombres décimaux):', 1)">float</a>) pour les valeurs décimales ; les chaînes de caractères (<a href="#" onclick="rechercheRapide('str :', 1)">str</a>) pour le texte ; et les booléens (<a href="#" onclick="rechercheRapide('bool :', 1)">bool</a>) qui prennent les valeurs True ou False. Python propose également des structures de données plus complexes, comme les listes (<a href="#" onclick="rechercheRapide('list :', 1)">list</a>), qui stockent des collections ordonnées et modifiables d’éléments ; les tuples (<a href="#" onclick="rechercheRapide('tuple :', 1)">tuple</a>), similaires aux listes mais immuables ; les ensembles (<a href="#" onclick="rechercheRapide('set :', 1)">set</a>), qui contiennent des éléments uniques ; et les dictionnaires (<a href="#" onclick="rechercheRapide('dict', 1)">dict</a>), qui associent des clés à des valeurs. Grâce à cette diversité de types de données, Python permet de développer des programmes flexibles et adaptés à de nombreux besoins, tout en facilitant la gestion et l’organisation des informations.
+  On peut tester le type d'un objet avec la fonction <a href="#" onclick="rechercheRapide('type() f. ou o. :', 2)">type()</a>.
 
-<u><b>int (nombres entiers):</b></u>
+<u><b>int (nombres entiers) :</b></u>
 
  Le type int est utilisé pour représenter les nombres entiers, c’est-à-dire les nombres sans partie décimale, comme -5, 0 ou 42. Il est couramment utilisé pour les calculs, les compteurs et les indices dans les structures de données.
  Les variables de type int peuvent être créées directement en attribuant une valeur entière ou en convertissant une autre donnée à l’aide de la fonction <a href="#" onclick="rechercheRapide('int()', 2)">int()</a>.
 
-<u><b>float (nombres décimaux):</b></u>
+<u><b>float (nombres décimaux) :</b></u>
 
 Le type float permet de représenter les nombres à virgule flottante, c’est-à-dire les nombres comportant une partie décimale, comme 3.14, -0.5 ou 2.0. Il est utilisé pour les calculs nécessitant une précision décimale.
 Les variables de type float peuvent être créées directement en attribuant une valeur décimale ou en convertissant une autre donnée à l’aide de la fonction <a href="#" onclick="rechercheRapide('float()', 2)">float()</a>.
 
-<u><b>complex (nombres complexes):</b></u>
+<u><b>complex (nombres complexes) :</b></u>
 
 Le type complex permet de représenter des nombres complexes composés d’une partie réelle et d’une partie imaginaire, comme (3 + 2j). Il est principalement utilisé dans les calculs scientifiques et mathématiques.
 Les variables de type complex peuvent être créées directement en utilisant la notation complexe ou en convertissant des valeurs à l’aide de la fonction <a href="#" onclick="rechercheRapide('complex(real=0, imag=0) :', 2)">complex()</a>.
@@ -78,6 +78,35 @@ Les variables de type frozenset peuvent être créées à partir d’un ensemble
 
 Le type NoneType est le type de l’objet spécial None, qui représente l’absence de valeur ou une valeur nulle. Il est souvent utilisé pour indiquer qu’une variable n’a pas encore reçu de donnée significative ou qu’une fonction ne retourne aucun résultat particulier. Comme None est un singleton (il n’existe qu’une seule instance de cet objet), on vérifie généralement sa présence avec l’opérateur is. <a href="#" onclick="rechercheRapide('', 3)">🔎</a>L’utilisation correcte de None permet de gérer proprement les cas où une valeur est absente ou indéfinie dans un programme.
 
+<u><b>Les fonctions :</b></u>
+
+Une fonction est un bloc de code réutilisable qui effectue une tâche spécifique.
+Elle est définie avec le mot-clé def et peut être appelée indépendamment.
+Elle peut prendre des arguments et retourner une valeur.
+Elle n’est pas associée à un objet ou une classe.
+
+<u><b>Les fonctions intégrées (built-ins) :</b></u>
+
+
+<u><b>Les méthodes :</b></u>
+
+Une méthode est une fonction qui est associée à un objet (instance d’une classe) ou à une classe.
+Elle est définie dans le corps d’une classe.
+Elle prend toujours self (pour une méthode d’instance) comme premier argument, qui représente l’instance de la classe.
+Elle peut accéder et modifier les attributs de l’objet.
+
+Elles sont répertoriées dans deux familles : 
+  <a href="#" onclick="rechercheRapide('Les méthodes ordinaires :', 1)">Les méthodes ordinaires</a>
+  <a href="#" onclick="rechercheRapide('Les méthodes spéciales (dunder) :', 1)">Les méthodes spéciales (dunder)</a>
+
+
+<u><b>Les méthodes ordinaires :</b></u>
+
+
+<u><b>Les méthodes spéciales (dunder) :</b></u>
+
+
+
 <u><b>Les opérateurs :</b></u>
 
   Les opérateurs sont des petits signes tels que +, != ou and.
@@ -85,13 +114,13 @@ Le type NoneType est le type de l’objet spécial None, qui représente l’abs
   La plupart des opérateurs se placent entre deux opérandes, mais certains s'appliquent devant un seul opérande.
 
 <a href="#" onclick="voirAussi('voir-aussi-operateurs')">Voir aussi</a>
-<a class="voir-aussi-operateurs" href="#" onclick="rechercheRapide('Les opérateurs arithmétiques :', 1)">opérateurs arithmétiques</a>
-<a class="voir-aussi-operateurs" href="#" onclick="rechercheRapide('Les opérateurs de comparaison :', 1)">opérateurs de comparaison</a>
-<a class="voir-aussi-operateurs" href="#" onclick="rechercheRapide('Les opérateurs d\'affectation :', 1)">opérateurs d'affectation</a>
-<a class="voir-aussi-operateurs" href="#" onclick="rechercheRapide('Les opérateurs booléens :', 1)">opérateurs booléens</a>
-<a class="voir-aussi-operateurs" href="#" onclick="rechercheRapide('Les opérateurs logiques ou bit à bit :', 1)">opérateurs booléens ou bit à bit </a>
-<a class="voir-aussi-operateurs" href="#" onclick="rechercheRapide('Les opérateurs d\'identité :', 1)">Les opérateurs d'identité</a>
-<a class="voir-aussi-operateurs" href="#" onclick="rechercheRapide('Les opérateurs d\'appartenance :', 1)">Les opérateurs d'appartenance</a>
+<a class="voir-aussi-operateurs" href="#" onclick="rechercheRapide('Les opérateurs arithmétiques :', 1)">Opérateurs arithmétiques</a>
+<a class="voir-aussi-operateurs" href="#" onclick="rechercheRapide('Les opérateurs de comparaison :', 1)">Opérateurs de comparaison</a>
+<a class="voir-aussi-operateurs" href="#" onclick="rechercheRapide('Les opérateurs d\'affectation :', 1)">Opérateurs d'affectation</a>
+<a class="voir-aussi-operateurs" href="#" onclick="rechercheRapide('Les opérateurs booléens :', 1)">Opérateurs booléens</a>
+<a class="voir-aussi-operateurs" href="#" onclick="rechercheRapide('Les opérateurs logiques ou bit à bit :', 1)">Opérateurs booléens ou bit à bit </a>
+<a class="voir-aussi-operateurs" href="#" onclick="rechercheRapide('Les opérateurs d\'identité :', 1)">Opérateurs d'identité</a>
+<a class="voir-aussi-operateurs" href="#" onclick="rechercheRapide('Les opérateurs d\'appartenance :', 1)">Opérateurs d'appartenance</a>
 
 <u><b>Les opérateurs arithmétiques :</b></u>
 
@@ -142,7 +171,7 @@ Le type NoneType est le type de l’objet spécial None, qui représente l’abs
 
 <u><b>Les opérateurs de comparaison :</b></u>
 
-  Les opérateurs de comparaison permettent de comparer plusieurs objets en retournant une valeur booléenne telle que True ou False dont on peut se servir pour des instructions telles que if ou while.
+  Les opérateurs de comparaison permettent de comparer plusieurs objets en retournant une valeur booléenne telle que True ou False dont on peut se servir pour des instructions telles qu'if ou while.
 
 <table border="0">
  <tr>
