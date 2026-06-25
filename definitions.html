@@ -85,30 +85,30 @@ Renvoie la somme d'une valeur initiale (par défaut : 0) et d'un itérable de no
     start : valeur initiale
 
 
-<u><b>min(*args, key=None, default=None)</b></u>
+<u><b>min(*args, key=None, défaut=None)</b></u>
 
 Avec un seul argument itérable, retourne son plus petit élément. Avec deux arguments ou plus, retourne le plus petit argument.
 L'argument key applique aux éléments de l'iterable une fonction puis renvoie le résultat.
-L'argument default donne une valeur par defaut si l'iterable est vide.
+L'argument défaut donne une valeur par defaut si l'iterable est vide.
 
 <b>Paramètres :</b>
 
     *args ou un itérable
     key : fonction de comparaison
-    default : valeur de secours
+    défaut : valeur de secours
 
 
-<u><b>max(*args, key=None, default=None)</b></u>
+<u><b>max(*args, key=None, défaut=None)</b></u>
 
 Avec un seul argument itérable, retourne son plus grand élément. Avec deux arguments ou plus, retourne le plus grand argument.
 L'argument key applique aux éléments de l'iterable une fonction puis renvoie le résultat.
-L'argument default donne une valeur par defaut si l'iterable est vide.
+L'argument défaut donne une valeur par defaut si l'iterable est vide.
 
 <b>Paramètres :</b>
 
     *args ou un itérable
     key : fonction de comparaison
-    default : valeur de secours
+    défaut : valeur de secours
 
 
 <u><b>int(x=0, base=10)</b></u>
@@ -154,7 +154,7 @@ Si encoding ou errors est spécifié, alors l'objet doit contenir des données b
     errors : gestion des erreurs de décodage
 
 
-<u><b>bool(x) -> bool :</b></u>
+<u><b>bool(x) :</b></u>
 
 Convertit en booléen en renvoyant True si x est True, False sinon. Ce sont les deux seules valeurs de retour.
 
@@ -223,7 +223,9 @@ Retourne l'ordre des objets d'un itérateur.
 
 <u><b>enumerate(iterable, start=0)</b></u>
 
-Parcoure un iterable tout en récupérant à la fois l'indice et la valeur. Par défautn, l'énumerement débute à l'élément 0.
+ Rend un objet enumerate.
+ Parcours un iterable tout en récupérant à la fois l'indice et la valeur et génère des tuples (indice, valeur). Par défaut, l'énumerement débute à l'élément 0.
+
 
 <b>Paramètres :</b>
 
@@ -232,33 +234,34 @@ Parcoure un iterable tout en récupérant à la fois l'indice et la valeur. Par 
 
 <u><b>zip(*iterables, strict=False)</b></u>
 
-Assemble plusieurs itérables.
+ Rend un objet zip.
+ L'objet zip génère des tuples de longueur n, où n est le nombre d'itérables passés comme arguments positionnels à zip(). Le i-ème élément de chaque tuple provient du i-ème itérable passé à zip(). Ce processus se poursuit jusqu'à épuisement de l'argument le plus court.
+ Si strict est vrai et que l'un des arguments est épuisé avant les autres, une exception ValueError est levée.
 
 <b>Paramètres :</b>
 
-    *iterables : séquences à combiner.
+   *iterables : séquences à combiner
+    strict : vérifie les longueurs
 
-    strict : vérifie les longueurs.
+<u><b>map(func, *iterables)</b></u>
 
-<u><b>map(function, iterable, *iterables)</b></u>
-
-Applique une fonction à chaque élément.
+Rend un objet map.
+Créez un itérateur qui calcule la fonction en utilisant les arguments de chacun des itérables. S'arrête lorsque le plus court itérable est épuisé.
 
 <b>Paramètres :</b>
 
-    function : fonction à appliquer.
-
-    iterable(s) : données.
+    function : fonction à appliquer
+   *iterables : données
 
 <u><b>filter(function, iterable)</b></u>
 
-Filtre des éléments.
+Rend un objet filter.
+Renvoie un itérateur contenant les éléments de l'itérable pour lesquels function(item) rend True. Si function est None, renvoie les éléments pour lesquels la condition est vraie.
 
 <b>Paramètres :</b>
 
-    function : condition.
-
-    iterable : données.
+    function : fonction ou None
+    iterable : données
 
 <u><b>all(iterable)</b></u>
 
@@ -406,7 +409,7 @@ Retourne la valeur de hachage.
     obj : objet hashable.
 
 Fonctions sur les attributs
-<u><b>getattr(obj, name, default=None)</b></u>
+<u><b>getattr(obj, name, défaut=None)</b></u>
 
 Récupère un attribut.
 
@@ -416,7 +419,7 @@ Récupère un attribut.
 
     name : nom de l'attribut.
 
-    default : valeur de secours.
+    défaut : valeur de secours.
 
 <u><b>setattr(obj, name, value)</b></u>
 
@@ -461,7 +464,7 @@ Crée un itérateur.
 
     sentinel : valeur d'arrêt optionnelle.
 
-next(iterator, default=None)
+next(iterator, défaut=None)
 
 Retourne l'élément suivant.
 
@@ -469,7 +472,7 @@ Retourne l'élément suivant.
 
     iterator : itérateur.
 
-    default : valeur par défaut.
+    défaut : valeur par défaut.
 
 Fonctions de représentation
 repr(obj)
@@ -698,7 +701,7 @@ Le tableau ci-dessous illustre son fonctionnement :
 <u><b>| (OU logique) :</b></u>
 Opérateur logique qui effectue un OU logique bit à bit.<a href="#" onclick="rechercheRapide('|', 3, wholeWord=false)">🔎</a>
 Il se place entre deux éléments.
-Le tableau ci-dessous illustre son fontionnement : 
+Le tableau ci-dessous illustre son fonctionnement : 
 
 <table>
  <tr>
@@ -721,7 +724,7 @@ Le tableau ci-dessous illustre son fontionnement :
 <u><b>^ (XOR logique) :</b></u>
 Opérateur logique qui effectue un OU exclusif logique bit à bit.<a href="#" onclick="rechercheRapide('^', 3, wholeWord=false)">🔎</a>
 Il se place entre deux éléments.
-Le tableau ci-dessous illustre son fontionnement : 
+Le tableau ci-dessous illustre son fonctionnement : 
 
 <table>
  <tr>
@@ -832,10 +835,15 @@ Il se place entre deux éléments.
 Opérateur d'affectation qui effectue un décalage binaire à droite puis réaffecte le résultat.<a href="#" onclick="rechercheRapide('&gt;&gt;=', 3, wholeWord=false)">🔎</a>
 Il se place entre deux éléments.
 
+<u><b>:= (walrus) :</b></u>
+
+Permet d'assigner une valeur à une variable dans une expression.
+Walrus veut dire morse en français. Vous faites le rapprochement ? <a href="https://www.docstring.fr/media/contentblocks/Copilot_20251003_101306-1920x1024.webp">🔎</a>
+
 <u><b>and :</b></u>
 Opérateur booléen qui rend True si les deux expressions sont vraies.<a href="#" onclick="rechercheRapide('and', 3, wholeWord=false)">🔎</a>
 Il se place entre deux éléments.
-Le tableau ci-dessous illustre son fontionnement : 
+Le tableau ci-dessous illustre son fonctionnement : 
 
 <table>
  <tr>
@@ -858,7 +866,7 @@ Le tableau ci-dessous illustre son fontionnement :
 <u><b>or :</b></u>
 Opérateur booléen qui rend True si au moins une expression est vraie.<a href="#" onclick="rechercheRapide('or', 3, wholeWord=false)">🔎</a>
 Il se place entre deux éléments.
-Le tableau ci-dessous illustre son fontionnement : 
+Le tableau ci-dessous illustre son fonctionnement : 
 
 <table>
  <tr>
