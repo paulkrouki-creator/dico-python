@@ -84,8 +84,161 @@ Une fonction est un bloc de code réutilisable qui effectue une tâche spécifiq
 Elle est définie avec le mot-clé def et peut être appelée indépendamment.
 Elle peut prendre des arguments et retourner une valeur.
 Elle n’est pas associée à un objet ou une classe.
+Les fonctions sont pré integrées à python : pas besoin de les importer.
+Elles sont dites natives.
 
-<u><b>Les fonctions intégrées (built-ins) :</b></u>
+<u><b>Les fonctions natives (built-ins) :</b></u>
+
+<table border="0">
+ <tr>
+  <th>Fonction</th>
+  <th>Desscription</th>
+  <th></th>
+ </tr>
+<u><b>Les fonctions natives (built-ins) :</b></u>
+
+<table border="0">
+ <tr>
+  <th>Fonction</th>
+  <th>Description</th>
+  <th></th>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('abs', 2)">abs()</a></td>
+  <td>Valeur absolue</td>
+  <td><a href="#" onclick="rechercheRapide('abs', 3)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('aiter', 2)">aiter()</a></td>
+  <td>Itérateur async</td><td><a href="#" onclick="rechercheRapide('aiter', 3)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('all', 2)">all()</a></td>
+  <td>Tout vrai ?</td>
+  <td><a href="#" onclick="rechercheRapide('all', 3)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('any', 2)">any()</a></td>
+  <td>Au moins un vrai</td>
+  <td><a href="#" onclick="rechercheRapide('any', 3)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('ascii', 2)">ascii()</a></td>
+  <td>Représentation ASCII</td>
+  <td><a href="#" onclick="rechercheRapide('ascii', 3)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('bin', 2)">bin()</a></td>
+  <td>Transforme en binaire</td>
+  <td><a href="#" onclick="rechercheRapide('bin', 3)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('bool', 2)">bool()</a></td>
+  <td>Transforme en booléen</td>
+  <td><a href="#" onclick="rechercheRapide('bool', 3)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('bytearray', 2)">bytearray()</a></td>
+  <td>Transforme en tableau de bytes</td>
+  <td><a href="#" onclick="rechercheRapide('bytearray', 3)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('bytes', 2)">bytes()</a></td>
+  <td>Transforme en données immuables</td>
+  <td><a href="#" onclick="rechercheRapide('bytes', 3)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('callable', 2)">callable()</a></td>
+  <td>Vérifie si l'objet est appelable</td>
+  <td><a href="#" onclick="rechercheRapide('callable', 3)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('chr', 2)">chr()</a></td>
+  <td>Rend le caractère unicode spécifié</td>
+  <td><a href="#" onclick="rechercheRapide('chr', 3)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('classmethod', 2)">classmethod()</a></td>
+  <td>Méthode de classe</td>
+  <td><a href="#" onclick="rechercheRapide('classmethod', 3)">🔎</a></td>
+ </tr>
+ <tr><td><a href="#" onclick="rechercheRapide('compile', 2)">compile()</a></td><td>Compile du code</td><td><a href="#" onclick="rechercheRapide('compile', 3)">🔎</a></td></tr>
+ <tr><td><a href="#" onclick="rechercheRapide('complex', 2)">complex()</a></td><td>Nombre complexe</td><td><a href="#" onclick="rechercheRapide('complex', 3)">🔎</a></td></tr>
+
+ <tr><td><a href="#" onclick="rechercheRapide('delattr', 2)">delattr()</a></td><td>Supprime attribut</td><td><a href="#" onclick="rechercheRapide('delattr', 3)">🔎</a></td></tr>
+ <tr><td><a href="#" onclick="rechercheRapide('dict', 2)">dict()</a></td><td>Dictionnaire</td><td><a href="#" onclick="rechercheRapide('dict', 3)">🔎</a></td></tr>
+ <tr><td><a href="#" onclick="rechercheRapide('dir', 2)">dir()</a></td><td>Liste des attributs</td><td><a href="#" onclick="rechercheRapide('dir', 3)">🔎</a></td></tr>
+ <tr><td><a href="#" onclick="rechercheRapide('divmod', 2)">divmod()</a></td><td>Quotient + reste</td><td><a href="#" onclick="rechercheRapide('divmod', 3)">🔎</a></td></tr>
+
+ <tr><td><a href="#" onclick="rechercheRapide('enumerate', 2)">enumerate()</a></td><td>Index + valeur</td><td><a href="#" onclick="rechercheRapide('enumerate', 3)">🔎</a></td></tr>
+ <tr><td><a href="#" onclick="rechercheRapide('eval', 2)">eval()</a></td><td>Exécute expression</td><td><a href="#" onclick="rechercheRapide('eval', 3)">🔎</a></td></tr>
+ <tr><td><a href="#" onclick="rechercheRapide('exec', 2)">exec()</a></td><td>Exécute code</td><td><a href="#" onclick="rechercheRapide('exec', 3)">🔎</a></td></tr>
+
+ <tr><td><a href="#" onclick="rechercheRapide('filter', 2)">filter()</a></td><td>Filtre éléments</td><td><a href="#" onclick="rechercheRapide('filter', 3)">🔎</a></td></tr>
+ <tr><td><a href="#" onclick="rechercheRapide('float', 2)">float()</a></td><td>Nombre décimal</td><td><a href="#" onclick="rechercheRapide('float', 3)">🔎</a></td></tr>
+ <tr><td><a href="#" onclick="rechercheRapide('format', 2)">format()</a></td><td>Formatage texte</td><td><a href="#" onclick="rechercheRapide('format', 3)">🔎</a></td></tr>
+ <tr><td><a href="#" onclick="rechercheRapide('frozenset', 2)">frozenset()</a></td><td>Ensemble immuable</td><td><a href="#" onclick="rechercheRapide('frozenset', 3)">🔎</a></td></tr>
+
+ <tr><td><a href="#" onclick="rechercheRapide('getattr', 2)">getattr()</a></td><td>Récupère attribut</td><td><a href="#" onclick="rechercheRapide('getattr', 3)">🔎</a></td></tr>
+ <tr><td><a href="#" onclick="rechercheRapide('globals', 2)">globals()</a></td><td>Variables globales</td><td><a href="#" onclick="rechercheRapide('globals', 3)">🔎</a></td></tr>
+
+ <tr><td><a href="#" onclick="rechercheRapide('hasattr', 2)">hasattr()</a></td><td>Attribut existe ?</td><td><a href="#" onclick="rechercheRapide('hasattr', 3)">🔎</a></td></tr>
+ <tr><td><a href="#" onclick="rechercheRapide('hash', 2)">hash()</a></td><td>Hash d’objet</td><td><a href="#" onclick="rechercheRapide('hash', 3)">🔎</a></td></tr>
+ <tr><td><a href="#" onclick="rechercheRapide('help', 2)">help()</a></td><td>Aide</td><td><a href="#" onclick="rechercheRapide('help', 3)">🔎</a></td></tr>
+ <tr><td><a href="#" onclick="rechercheRapide('hex', 2)">hex()</a></td><td>Hexadécimal</td><td><a href="#" onclick="rechercheRapide('hex', 3)">🔎</a></td></tr>
+
+ <tr><td><a href="#" onclick="rechercheRapide('id', 2)">id()</a></td><td>ID objet</td><td><a href="#" onclick="rechercheRapide('id', 3)">🔎</a></td></tr>
+ <tr><td><a href="#" onclick="rechercheRapide('input', 2)">input()</a></td><td>Saisie utilisateur</td><td><a href="#" onclick="rechercheRapide('input', 3)">🔎</a></td></tr>
+ <tr><td><a href="#" onclick="rechercheRapide('int', 2)">int()</a></td><td>Entier</td><td><a href="#" onclick="rechercheRapide('int', 3)">🔎</a></td></tr>
+ <tr><td><a href="#" onclick="rechercheRapide('isinstance', 2)">isinstance()</a></td><td>Type vérif</td><td><a href="#" onclick="rechercheRapide('isinstance', 3)">🔎</a></td></tr>
+ <tr><td><a href="#" onclick="rechercheRapide('issubclass', 2)">issubclass()</a></td><td>Héritage ?</td><td><a href="#" onclick="rechercheRapide('issubclass', 3)">🔎</a></td></tr>
+ <tr><td><a href="#" onclick="rechercheRapide('iter', 2)">iter()</a></td><td>Itérateur</td><td><a href="#" onclick="rechercheRapide('iter', 3)">🔎</a></td></tr>
+
+ <tr><td><a href="#" onclick="rechercheRapide('len', 2)">len()</a></td><td>Taille</td><td><a href="#" onclick="rechercheRapide('len', 3)">🔎</a></td></tr>
+ <tr><td><a href="#" onclick="rechercheRapide('list', 2)">list()</a></td><td>Liste</td><td><a href="#" onclick="rechercheRapide('list', 3)">🔎</a></td></tr>
+ <tr><td><a href="#" onclick="rechercheRapide('locals', 2)">locals()</a></td><td>Variables locales</td><td><a href="#" onclick="rechercheRapide('locals', 3)">🔎</a></td></tr>
+
+ <tr><td><a href="#" onclick="rechercheRapide('map', 2)">map()</a></td><td>Applique fonction</td><td><a href="#" onclick="rechercheRapide('map', 3)">🔎</a></td></tr>
+ <tr><td><a href="#" onclick="rechercheRapide('max', 2)">max()</a></td><td>Maximum</td><td><a href="#" onclick="rechercheRapide('max', 3)">🔎</a></td></tr>
+ <tr><td><a href="#" onclick="rechercheRapide('memoryview', 2)">memoryview()</a></td><td>Vue mémoire</td><td><a href="#" onclick="rechercheRapide('memoryview', 3)">🔎</a></td></tr>
+ <tr><td><a href="#" onclick="rechercheRapide('min', 2)">min()</a></td><td>Minimum</td><td><a href="#" onclick="rechercheRapide('min', 3)">🔎</a></td></tr>
+
+ <tr><td><a href="#" onclick="rechercheRapide('next', 2)">next()</a></td><td>Élément suivant</td><td><a href="#" onclick="rechercheRapide('next', 3)">🔎</a></td></tr>
+ <tr><td><a href="#" onclick="rechercheRapide('object', 2)">object()</a></td><td>Objet de base</td><td><a href="#" onclick="rechercheRapide('object', 3)">🔎</a></td></tr>
+ <tr><td><a href="#" onclick="rechercheRapide('oct', 2)">oct()</a></td><td>Octal</td><td><a href="#" onclick="rechercheRapide('oct', 3)">🔎</a></td></tr>
+ <tr><td><a href="#" onclick="rechercheRapide('open', 2)">open()</a></td><td>Ouvre fichier</td><td><a href="#" onclick="rechercheRapide('open', 3)">🔎</a></td></tr>
+
+ <tr><td><a href="#" onclick="rechercheRapide('ord', 2)">ord()</a></td><td>Code ASCII</td><td><a href="#" onclick="rechercheRapide('ord', 3)">🔎</a></td></tr>
+ <tr><td><a href="#" onclick="rechercheRapide('pow', 2)">pow()</a></td><td>Puissance</td><td><a href="#" onclick="rechercheRapide('pow', 3)">🔎</a></td></tr>
+ <tr><td><a href="#" onclick="rechercheRapide('print', 2)">print()</a></td><td>Afficher</td><td><a href="#" onclick="rechercheRapide('print', 3)">🔎</a></td></tr>
+ <tr><td><a href="#" onclick="rechercheRapide('property', 2)">property()</a></td><td>Propriété</td><td><a href="#" onclick="rechercheRapide('property', 3)">🔎</a></td></tr>
+
+ <tr><td><a href="#" onclick="rechercheRapide('range', 2)">range()</a></td><td>Séquence</td><td><a href="#" onclick="rechercheRapide('range', 3)">🔎</a></td></tr>
+ <tr><td><a href="#" onclick="rechercheRapide('repr', 2)">repr()</a></td><td>Représentation</td><td><a href="#" onclick="rechercheRapide('repr', 3)">🔎</a></td></tr>
+ <tr><td><a href="#" onclick="rechercheRapide('reversed', 2)">reversed()</a></td><td>Inverse</td><td><a href="#" onclick="rechercheRapide('reversed', 3)">🔎</a></td></tr>
+ <tr><td><a href="#" onclick="rechercheRapide('round', 2)">round()</a></td><td>Arrondi</td><td><a href="#" onclick="rechercheRapide('round', 3)">🔎</a></td></tr>
+
+ <tr><td><a href="#" onclick="rechercheRapide('set', 2)">set()</a></td><td>Ensemble</td><td><a href="#" onclick="rechercheRapide('set', 3)">🔎</a></td></tr>
+ <tr><td><a href="#" onclick="rechercheRapide('setattr', 2)">setattr()</a></td><td>Définit attribut</td><td><a href="#" onclick="rechercheRapide('setattr', 3)">🔎</a></td></tr>
+ <tr><td><a href="#" onclick="rechercheRapide('slice', 2)">slice()</a></td><td>Tranches</td><td><a href="#" onclick="rechercheRapide('slice', 3)">🔎</a></td></tr>
+ <tr><td><a href="#" onclick="rechercheRapide('sorted', 2)">sorted()</a></td><td>Tri</td><td><a href="#" onclick="rechercheRapide('sorted', 3)">🔎</a></td></tr>
+ <tr><td><a href="#" onclick="rechercheRapide('staticmethod', 2)">staticmethod()</a></td><td>Méthode statique</td><td><a href="#" onclick="rechercheRapide('staticmethod', 3)">🔎</a></td></tr>
+
+ <tr><td><a href="#" onclick="rechercheRapide('str', 2)">str()</a></td><td>Chaîne</td><td><a href="#" onclick="rechercheRapide('str', 3)">🔎</a></td></tr>
+ <tr><td><a href="#" onclick="rechercheRapide('sum', 2)">sum()</a></td><td>Somme</td><td><a href="#" onclick="rechercheRapide('sum', 3)">🔎</a></td></tr>
+ <tr><td><a href="#" onclick="rechercheRapide('super', 2)">super()</a></td><td>Classe parent</td><td><a href="#" onclick="rechercheRapide('super', 3)">🔎</a></td></tr>
+
+ <tr><td><a href="#" onclick="rechercheRapide('tuple', 2)">tuple()</a></td><td>Tuple</td><td><a href="#" onclick="rechercheRapide('tuple', 3)">🔎</a></td></tr>
+ <tr><td><a href="#" onclick="rechercheRapide('type', 2)">type()</a></td><td>Type</td><td><a href="#" onclick="rechercheRapide('type', 3)">🔎</a></td></tr>
+
+ <tr><td><a href="#" onclick="rechercheRapide('vars', 2)">vars()</a></td><td>Variables</td><td><a href="#" onclick="rechercheRapide('vars', 3)">🔎</a></td></tr>
+ <tr><td><a href="#" onclick="rechercheRapide('zip', 2)">zip()</a></td><td>Fusion listes</td><td><a href="#" onclick="rechercheRapide('zip', 3)">🔎</a></td></tr>
+
+ <tr><td><a href="#" onclick="rechercheRapide('__import__', 2)">__import__()</a></td><td>Import dynamique</td><td><a href="#" onclick="rechercheRapide('__import__', 3)">🔎</a></td></tr>
+
+</table>
+</table>
+
 
 
 <u><b>Les méthodes :</b></u>
@@ -285,6 +438,11 @@ Elles sont répertoriées dans deux familles :
   <td><a href="#" onclick="rechercheRapide('>>=', 2)">&gt;&gt;=</a></td>
   <td>x = x >> y</td>
   <td><a href="#" onclick="rechercheRapide('>>=', 3, wholeWord=false)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide(':=', 2)">:=</a></td>
+  <td>walrus</td>
+  <td><a href="#" onclick="rechercheRapide(':=', 3, wholeWord=false)">🔎</a></td>
  </tr>
 </table>
 
