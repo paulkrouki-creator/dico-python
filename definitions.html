@@ -36,7 +36,7 @@ En comparant la valeur de retour de type() avec n’importe quel type, vous pouv
 <u><b>abs(x, /) :</b></u>
 
 Retourne la valeur absolue de l'argument.
-La valeur de retour est la même que celle d'entrée.
+Le type de retour est généralement le même que celui d'entrée.
 
 <b>Paramètres :</b>
 
@@ -58,7 +58,7 @@ ndigits peut être négatif.
 <u><b>pow(base, exp, mod=None) :</b></u>
 
 Calcule une puissance.
-Equivalant à x ** y .
+Équivalent à base ** exp. Si mod est fourni, rend (base ** exp) % mod de manière plus efficace.
 
 <b>Paramètres :</b>
 
@@ -81,19 +81,19 @@ Renvoie la somme d'une valeur initiale (par défaut : 0) et d'un itérable de no
 
 <b>Paramètres :</b>
 
-    iterable : séquence de nombres
+    iterable : itérable de nombres
     start : valeur initiale
 
 
 <u><b>min(*args, key=None, défaut=None)</b></u>
 
 Avec un seul argument itérable, retourne son plus petit élément. Avec deux arguments ou plus, retourne le plus petit argument.
-L'argument key applique aux éléments de l'iterable une fonction puis renvoie le résultat.
-L'argument défaut donne une valeur par defaut si l'iterable est vide.
+L'argument key permet de comparer les éléments selon une fonction.
+L'argument défaut donne une valeur par défaut si l'itérable est vide.
 
 <b>Paramètres :</b>
 
-    *args ou un itérable
+   *args ou un itérable
     key : fonction de comparaison
     défaut : valeur de secours
 
@@ -101,12 +101,12 @@ L'argument défaut donne une valeur par defaut si l'iterable est vide.
 <u><b>max(*args, key=None, défaut=None)</b></u>
 
 Avec un seul argument itérable, retourne son plus grand élément. Avec deux arguments ou plus, retourne le plus grand argument.
-L'argument key applique aux éléments de l'iterable une fonction puis renvoie le résultat.
-L'argument défaut donne une valeur par defaut si l'iterable est vide.
+L'argument key permet de comparer les éléments selon une fonction.
+L'argument défaut donne une valeur par défaut si l'itérable est vide.
 
 <b>Paramètres :</b>
 
-    *args ou un itérable
+   *args ou un itérable
     key : fonction de comparaison
     défaut : valeur de secours
 
@@ -156,44 +156,53 @@ Si encoding ou errors est spécifié, alors l'objet doit contenir des données b
 
 <u><b>bool(x) :</b></u>
 
-Convertit en booléen en renvoyant True si x est True, False sinon. Ce sont les deux seules valeurs de retour.
+Convertit une valeur en booléen selon sa valeur de vérité.
 
 <b>Paramètres :</b>
 
     x : valeur à évaluer
 
-<u><b>bytes(source=b'', encoding=None, errors='strict')</b></u>
+<u><b>bytes(...)</b></u>
 
 Crée un objet binaire immuable.
 
-bytes() → crée une séquence vide.
-bytes(n) → crée n octets initialisés à 0.
-bytes(iterable) → crée des octets à partir d'un itérable d'entiers entre 0 et 255.bytes
-(texte, encoding) → encode une chaîne de caractères en octets.bytes
-(objet_buffer) → crée une copie immuable d'un objet compatible avec l'API buffer (par exemple bytearray).
+bytes() → crée une séquence vide (b'')
+bytes(int) → crée un nombre (int) d'octets initialisés à 0
+bytes(iterable_of_ints) → crée des octets à partir d'un itérable d'entiers entre 0 et 255.
+bytes(string, encoding[, errors]) → encode une chaîne de caractères en octets.
+bytes(bytes_or_buffer) → crée une copie immuable d'un objet compatible avec l'API buffer (par exemple bytearray).
 
 <b>Paramètres :</b>
 
-    
+    int : nombre d'octets à créer
+    iterable_of_ints : iterable d'entier entre 0 et 255
+    string : chaine à encoder
+    encoding : encodage
+    errors : gestion des erreurs
+    bytes_or_buffer : objet à copier
 
-<u><b>bytearray(source=b'', encoding=None, errors='strict')</b></u>
+
+<u><b>bytearray(...)</b></u>
 
 Crée un tableau binaire modifiable.
 
-bytearray() → tableau d'octets vide.
-bytearray(n) → crée n octets initialisés à 0.
-bytearray(iterable) → à partir d'entiers entre 0 et 255.
-bytearray(texte, encoding) → encode une chaîne de caractères.
-bytearray(bytes_ou_buffer) → crée une copie modifiable.
+bytearray() → tableau d'octets vide (bytearray(b'')).
+bytearray(int) → crée un nombre (int) d'octets initialisés à 0
+bytearray(iterable_of_ints) → à partir d'entiers entre 0 et 255.
+bytearray(string, encoding[, errors]) → encode une chaîne de caractères.
+bytearray(bytes_or_buffer) → crée une copie modifiable.
 
 
 <b>Paramètres :</b>
 
-    source : données source
+    int : nombre d'octets à créer initialisés à 0
+    iterable_of_ints : iterable d'entier entre 0 et 255
+    string : chaine à encoder
     encoding : encodage
     errors : gestion des erreurs
+    bytes_or_buffer : objet à copier
 
-Fonctions sur les collections
+
 <u><b>len(obj, /)</b></u>
 
 Retourne le nombre d'éléments contenus dans un conteneur.
@@ -215,7 +224,7 @@ Retourne le nombre d'éléments contenus dans un conteneur.
 
 <u><b>reversed(sequence, /)</b></u>
 
-Retourne l'ordre des objets d'un itérateur.
+Inverse l'ordre des élements d'un iterateur.
 
 <b>Paramètres :</b>
 
@@ -223,9 +232,8 @@ Retourne l'ordre des objets d'un itérateur.
 
 <u><b>enumerate(iterable, start=0)</b></u>
 
- Rend un objet enumerate.
- Parcours un iterable tout en récupérant à la fois l'indice et la valeur et génère des tuples (indice, valeur). Par défaut, l'énumerement débute à l'élément 0.
-
+Retourne un objet enumerate.
+Parcourt un itérable tout en récupérant à la fois l'indice et la valeur et génère des tuples (indice, valeur). Par défaut, l'énumération débute à l'élément 0.
 
 <b>Paramètres :</b>
 
@@ -234,9 +242,9 @@ Retourne l'ordre des objets d'un itérateur.
 
 <u><b>zip(*iterables, strict=False)</b></u>
 
- Rend un objet zip.
- L'objet zip génère des tuples de longueur n, où n est le nombre d'itérables passés comme arguments positionnels à zip(). Le i-ème élément de chaque tuple provient du i-ème itérable passé à zip(). Ce processus se poursuit jusqu'à épuisement de l'argument le plus court.
- Si strict est vrai et que l'un des arguments est épuisé avant les autres, une exception ValueError est levée.
+Retourne un objet zip.
+L'objet zip génère des tuples de longueur n, où n est le nombre d'itérables passés comme arguments positionnels à zip(). Le i-ème élément de chaque tuple provient du i-ème itérable passé à zip(). Ce processus se poursuit jusqu'à épuisement de l'argument le plus court.
+Si strict est vrai et que l'un des arguments est épuisé avant les autres, une exception ValueError est levée.
 
 <b>Paramètres :</b>
 
@@ -245,23 +253,24 @@ Retourne l'ordre des objets d'un itérateur.
 
 <u><b>map(func, *iterables)</b></u>
 
-Rend un objet map.
-Créez un itérateur qui calcule la fonction en utilisant les arguments de chacun des itérables. S'arrête lorsque le plus court itérable est épuisé.
+Retourne un objet map.
+Crée un itérateur qui calcule la fonction en utilisant les arguments de chacun des itérables. S'arrête lorsque le plus court itérable est épuisé.
 
 <b>Paramètres :</b>
 
-    function : fonction à appliquer
-   *iterables : données
+    func : fonction à appliquer
+    *iterables : données
 
 <u><b>filter(function, iterable)</b></u>
 
-Rend un objet filter.
-Renvoie un itérateur contenant les éléments de l'itérable pour lesquels function(item) rend True. Si function est None, renvoie les éléments pour lesquels la condition est vraie.
+Retourne un objet filter.
+Renvoie un itérateur contenant les éléments de l'itérable pour lesquels function(item) renvoie True. Si function est None, seuls les éléments évalués comme vrais sont conservés.
 
 <b>Paramètres :</b>
 
     function : fonction ou None
     iterable : données
+
 
 <u><b>all(iterable)</b></u>
 
@@ -269,7 +278,8 @@ Retourne True si tous les éléments sont vrais.
 
 <b>Paramètres :</b>
 
-    iterable : séquence testée.
+    iterable : séquence testée
+
 
 <u><b>any(iterable)</b></u>
 
@@ -277,67 +287,88 @@ Retourne True si au moins un élément est vrai.
 
 <b>Paramètres :</b>
 
-    iterable : séquence testée.
+    iterable : séquence testée
 
-Fonctions de création de collections
+
+
 <u><b>list(iterable=())</b></u>
 
 Crée une liste.
 
+list() → liste vide.
+list(iterable) → crée une liste à partir d'un itérable.
+
 <b>Paramètres :</b>
 
-    iterable : données initiales.
+    iterable : données initiales
+
 
 <u><b>tuple(iterable=())</b></u>
 
 Crée un tuple.
 
+tuple() → tuple vide.
+tuple(iterable) → crée un tuple à partir d'un itérable.
+
 <b>Paramètres :</b>
 
-    iterable : données initiales.
+    iterable : données initiales
+
 
 <u><b>set(iterable=())</b></u>
 
-Crée un ensemble unique.
+Crée un ensemble d'éléments uniques.
+
+set() → ensemble vide.
+set(iterable) → éléments uniques issus d'un itérable.
 
 <b>Paramètres :</b>
 
-    iterable : données initiales.
+    iterable : données initiales
+
 
 <u><b>frozenset(iterable=())</b></u>
 
 Crée un ensemble immuable.
 
+frozenset() → ensemble vide.
+frozenset(iterable) → ensemble immuable contenant les éléments uniques.
+
 <b>Paramètres :</b>
 
-    iterable : données initiales.
+    iterable : données initiales
+
 
 <u><b>dict(**kwargs)</b></u>
 
 Crée un dictionnaire.
 
+dict() → dictionnaire vide.
+dict(mapping) → copie un dictionnaire ou un objet de type mapping.
+dict(iterable) → à partir de couples (clé, valeur).
+dict(**kwargs) → à partir d'arguments nommés.
+
 <b>Paramètres :</b>
 
-    mapping ou paires clé/valeur.
+    mapping : dictionnaire ou objet mapping
+    iterable : couples (clé, valeur)
+  **kwargs : clés nommées
 
-    **kwargs : clés nommées.
 
 Fonctions d'entrée/sortie
+
 <u><b>print(*objects, sep=' ', end='\n', file=None, flush=False)</b></u>
 
 Affiche des données.
 
 <b>Paramètres :</b>
 
-    *objects : objets à afficher.
+   *objects : objets à afficher
+    sep : séparateur
+    end : terminaison
+    file : flux cible
+    flush : vidage immédiat du tampon
 
-    sep : séparateur.
-
-    end : terminaison.
-
-    file : flux cible.
-
-    flush : vidage immédiat du buffer.
 
 <u><b>input(prompt='')</b></u>
 
@@ -345,7 +376,8 @@ Lit une saisie utilisateur.
 
 <b>Paramètres :</b>
 
-    prompt : message affiché.
+prompt : message affiché
+
 
 <u><b>open(file, mode='r', buffering=-1, encoding=None, errors=None)</b></u>
 
@@ -353,44 +385,43 @@ Ouvre un fichier.
 
 <b>Paramètres :</b>
 
-    file : chemin du fichier.
+    file : chemin du fichier
+    mode : mode d'accès
+    buffering : gestion du tampon
+    encoding : encodage
+    errors : gestion des erreurs
 
-    mode : mode d'accès.
-
-    buffering : gestion du tampon.
-
-    encoding : encodage.
-
-    errors : gestion des erreurs.
 
 Fonctions d'inspection
+
 <u><b>type(obj)</b></u>
 
 Retourne le type d'un objet.
 
 <b>Paramètres :</b>
 
-    obj : objet à analyser.
+    obj : objet à analyser
+
 
 <u><b>isinstance(obj, classinfo)</b></u>
 
-Vérifie le type réel d'un objet.
+Vérifie si un objet est une instance d'un type ou d'un tuple de types.
 
 <b>Paramètres :</b>
 
-    obj : objet.
+    obj : objet
+    classinfo : type ou tuple de types
 
-    classinfo : type ou tuple de types.
 
 <u><b>issubclass(cls, classinfo)</b></u>
 
-Vérifie un héritage.
+Vérifie si une classe hérite d'une autre.
 
 <b>Paramètres :</b>
 
-    cls : classe.
+    cls : classe
+    classinfo : classe parente ou tuple de classes
 
-    classinfo : classe parente.
 
 <u><b>id(obj)</b></u>
 
@@ -398,28 +429,30 @@ Retourne l'identifiant unique d'un objet.
 
 <b>Paramètres :</b>
 
-    obj : objet concerné.
+    obj : objet concerné
+
 
 <u><b>hash(obj)</b></u>
 
-Retourne la valeur de hachage.
+Retourne la valeur de hachage d'un objet hashable.
 
 <b>Paramètres :</b>
 
-    obj : objet hashable.
+    obj : objet hashable
+
 
 Fonctions sur les attributs
-<u><b>getattr(obj, name, défaut=None)</b></u>
+
+<u><b>getattr(obj, name, default=None)</b></u>
 
 Récupère un attribut.
 
 <b>Paramètres :</b>
 
-    obj : objet cible.
+    obj : objet cible
+    name : nom de l'attribut
+    default : valeur de secours
 
-    name : nom de l'attribut.
-
-    défaut : valeur de secours.
 
 <u><b>setattr(obj, name, value)</b></u>
 
@@ -427,11 +460,10 @@ Modifie ou crée un attribut.
 
 <b>Paramètres :</b>
 
-    obj : objet cible.
+    obj : objet cible
+    name : nom de l'attribut
+    value : nouvelle valeur
 
-    name : nom.
-
-    value : nouvelle valeur.
 
 <u><b>hasattr(obj, name)</b></u>
 
@@ -439,9 +471,9 @@ Vérifie l'existence d'un attribut.
 
 <b>Paramètres :</b>
 
-    obj : objet.
+    obj : objet
+    name : attribut recherché
 
-    name : attribut recherché.
 
 <u><b>delattr(obj, name)</b></u>
 
@@ -449,196 +481,228 @@ Supprime un attribut.
 
 <b>Paramètres :</b>
 
-    obj : objet.
+    obj : objet
+    name : attribut
 
-    name : attribut.
 
 Fonctions d'itération
+
 <u><b>iter(object, sentinel=None)</b></u>
 
 Crée un itérateur.
 
-<b>Paramètres :</b>
-
-    object : objet itérable.
-
-    sentinel : valeur d'arrêt optionnelle.
-
-next(iterator, défaut=None)
-
-Retourne l'élément suivant.
+iter(iterable) → retourne un itérateur sur un objet itérable.
+iter(callable, sentinel) → appelle callable jusqu'à ce que sentinel soit renvoyé.
 
 <b>Paramètres :</b>
 
-    iterator : itérateur.
+    object : objet itérable ou fonction
+    sentinel : valeur d'arrêt
 
-    défaut : valeur par défaut.
 
-Fonctions de représentation
-repr(obj)
+<u><b>next(iterator, default=None)</b></u>
 
-Retourne une représentation technique.
+Retourne l'élément suivant d'un itérateur.
 
-<b>Paramètres :</b>
+Si l'itérateur est terminé :
 
-    obj : objet à représenter.
-
-ascii(obj)
-
-Version ASCII de repr().
+ default=None → lève StopIteration
+ autre valeur de default → retourne cette valeur
 
 <b>Paramètres :</b>
 
-    obj : objet.
+    iterator : itérateur
+    default : valeur renvoyée si terminé
 
-format(value, format_spec='')
 
-Formate une valeur.
+<u><b>repr(obj)</b></u>
 
-<b>Paramètres :</b>
-
-    value : donnée.
-
-    format_spec : spécification de format.
-
-bin(x)
-
-Conversion en binaire.
+Retourne une représentation technique de l'objet.
 
 <b>Paramètres :</b>
 
-    x : entier.
+    obj : objet à représenter
 
-oct(x)
 
-Conversion en octal.
+<u><b>ascii(obj)</b></u>
 
-<b>Paramètres :</b>
-
-    x : entier.
-
-hex(x)
-
-Conversion en hexadécimal.
+Retourne la représentation de repr() en échappant les caractères non ASCII.
 
 <b>Paramètres :</b>
 
-    x : entier.
+    obj : objet
 
-Fonctions d'exécution dynamique
-eval(expression, globals=None, locals=None)
 
-Évalue une expression Python.
+<u><b>format(value, format_spec='')</b></u>
 
-<b>Paramètres :</b>
-
-    expression : code à évaluer.
-
-    globals : variables globales.
-
-    locals : variables locales.
-
-exec(object, globals=None, locals=None)
-
-Exécute du code Python.
+Formate une valeur selon une spécification de format.
 
 <b>Paramètres :</b>
 
-    object : code source.
+    value : donnée
+    format_spec : spécification de format
 
-    globals : contexte global.
 
-    locals : contexte local.
+<u><b>bin(x)</b></u>
 
-compile(source, filename, mode)
+Convertit un entier en chaîne binaire.
+
+<b>Paramètres :</b>
+
+    x : entier
+
+
+<u><b>oct(x)</b></u>
+
+Convertit un entier en chaîne octale (base 8).
+
+<b>Paramètres :</b>
+
+    x : entier
+
+
+<u><b>hex(x)</b></u>
+
+Convertit un entier en chaîne hexadécimale (base 16).
+
+<b>Paramètres :</b>
+
+    x : entier
+
+
+<u><b>eval(expression, globals=None, locals=None)</b></u>
+
+Évalue une expression Python et retourne son résultat.
+
+<b>Paramètres :</b>
+
+    expression : code à évaluer
+    globals : variables globales
+    locals : variables locales
+
+
+<u><b>exec(object, globals=None, locals=None)</b></u>
+
+Exécute dynamiquement du code Python.
+
+<b>Paramètres :</b>
+
+    object : code source
+    globals : contexte global
+    locals : contexte local
+
+
+<u><b>compile(source, filename, mode)</b></u>
 
 Compile du code Python.
 
 <b>Paramètres :</b>
 
-    source : code.
+    source : code
+    filename : nom logique
+    mode : 'exec', 'eval' ou 'single'
 
-    filename : nom logique.
-
-    mode : 'exec', 'eval', 'single'.
 
 Fonctions liées aux classes
-super(type, object=None)
+
+<u><b>super(type, object=None)</b></u>
 
 Accède à la classe parente.
 
 <b>Paramètres :</b>
 
-    type : classe courante.
+    type : classe courante
+    object : instance
 
-    object : instance.
 
-property(fget=None, fset=None, fdel=None, doc=None)
+<u><b>property(fget=None, fset=None, fdel=None, doc=None)</b></u>
 
-Crée une propriété.
+Crée une propriété permettant de contrôler l'accès à un attribut.
 
 <b>Paramètres :</b>
 
-    fget : getter.
+    fget : getter
+    fset : setter
+    fdel : deleter
+    doc : documentation
 
-    fset : setter.
 
-    fdel : deleter.
-
-    doc : documentation.
-
-classmethod(function)
+<u><b>classmethod(function)</b></u>
 
 Transforme une méthode en méthode de classe.
 
 <b>Paramètres :</b>
 
-    function : méthode concernée.
+    function : méthode concernée
 
-staticmethod(function)
+
+<u><b>staticmethod(function)</b></u>
 
 Transforme une méthode en méthode statique.
 
 <b>Paramètres :</b>
 
-    function : méthode concernée.
+    function : méthode concernée
 
-Fonctions diverses
-help(object=None)
+
+
+<u><b>help(object=None)</b></u>
 
 Affiche la documentation.
 
 <b>Paramètres :</b>
 
-    object : élément documenté.
+    object : élément documenté
 
-dir(object=None)
 
-Liste les attributs disponibles.
+<u><b>dir(object=None)</b></u>
 
-<b>Paramètres :</b>
-
-    object : objet à inspecter.
-
-vars(object=None)
-
-Retourne le dictionnaire d'attributs.
+Retourne la liste des noms définis pour un objet.
 
 <b>Paramètres :</b>
 
-    object : objet cible.
+    object : objet à inspecter
 
-callable(obj)
 
-Indique si l'objet est appelable.
+<u><b>vars(object=None)</b></u>
+
+Retourne le dictionnaire des attributs d'un objet class.
 
 <b>Paramètres :</b>
 
-    obj : objet testé.
+    object : objet cible
 
-breakpoint(*args, **kwargs)
 
-Déclenche le débogueur Python.
+<u><b>callable(obj)</b></u>
+
+Indique si un objet est appelable.
+
+<b>Paramètres :</b>
+
+    obj : objet testé
+
+
+<u><b>breakpoint(*args, **kwargs)</b></u>
+
+Déclenche le débogueur configuré par Python.
+
+<b>Paramètres :</b>
+
+    *args, **kwargs : transmis au débogueur
+
+<u><b>copyright()</b></u>
+
+Affiche les informations de copyright de Python.
+
+<u><b>credits()</b></u>
+
+Affiche les crédits du projet Python.
+
+<u><b>license()</b></u>
+
+Affiche la licence de Python.
+
+
 
 <b>Paramètres :</b>
 
@@ -837,7 +901,7 @@ Il se place entre deux éléments.
 
 <u><b>:= (walrus) :</b></u>
 
-Permet d'assigner une valeur à une variable dans une expression.
+Permet d'assigner une valeur à une variable dans une expression. <a href="#" onclick="rechercheRapide(':=', 3, wholeWord=false)">🔎</a>
 Walrus veut dire morse en français. Vous faites le rapprochement ? <a href="https://www.docstring.fr/media/contentblocks/Copilot_20251003_101306-1920x1024.webp">🔎</a>
 
 <u><b>and :</b></u>
