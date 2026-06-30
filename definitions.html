@@ -106,11 +106,14 @@ Crée un nombre complexe d'une partie réelle et d'une partie imaginaire faculta
     imag : partie imaginaire
 
 
-<u><b>str(object='') :
-str(bytes_or_buffer[, encoding[, errors]]) :</b></u>
+<u><b>str(...) :</b></u>
 
-Convertit un objet en chaîne de caractères. 
+str(object='')
+str(bytes_or_buffer[, encoding[, errors]])
+
+Convertit un objet en chaîne de caractères : 
 Si encoding ou errors est spécifié, alors l'objet doit contenir des données binaires (des octets) qui seront décodées selon l'encodage et la gestion d'erreur indiqués.
+Sinon convertit d'autres types en str.
 
 <b>Paramètres :</b>
 
@@ -246,7 +249,7 @@ Renvoie un itérateur contenant les éléments de l'itérable pour lesquels func
     iterable : données
 
 
-<u><b>all(iterable)</b></u>
+<u><b>all(iterable, /)</b></u>
 
 Retourne True si tous les éléments sont vrais.
 
@@ -751,6 +754,52 @@ Crée un objet représentant une tranche, utilisable notamment pour extraire une
     start : indice de début
     stop : indice de fin (exclu)
     step : pas entre les indices
+
+<u><b>aiter(async_iterable, /)</b></u>
+
+Retourne un itérateur asynchrone.
+
+aiter(async_iterable) → renvoie l'itérateur asynchrone associé à un objet asynchrone. Équivalent à l'appel de la méthode spéciale __aiter__().
+
+<b>Paramètres :</b>
+
+    async_iterable : objet itérable asynchrone
+
+
+<u><b>anext(...)</b></u>
+
+Retourne l'élément suivant d'un itérateur asynchrone.
+
+anext(async_iterator, /) → renvoie le prochain élément de l'itérateur asynchrone. Si l'itération est terminée, une exception StopAsyncIteration est levée.
+
+anext(async_iterator, default, /) → renvoie default si l'itérateur est épuisé au lieu de lever une exception.
+
+<b>Paramètres :</b>
+
+    async_iterator : itérateur asynchrone
+
+    default : valeur retournée si l'itérateur est terminé
+
+
+<u><b>import(name, globals=None, locals=None, fromlist=(), level=0)</b></u>
+
+Importe un module.
+
+__import__(name) → importe le module dont le nom est indiqué. Cette fonction est utilisée en interne par l'instruction import, mais peut également être appelée directement.
+
+__import__(name, globals, locals, fromlist, level) → permet de contrôler le comportement de l'import, notamment pour les imports relatifs et les modules importés avec from ... import ....
+
+<b>Paramètres :</b>
+
+    name : nom du module à importer
+
+    globals : dictionnaire des variables globales
+
+    locals : dictionnaire des variables locales
+
+    fromlist : noms des objets à importer depuis le module
+
+    level : niveau d'import relatif (0 pour un import absolu)
 
 
 
