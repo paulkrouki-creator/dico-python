@@ -35,6 +35,9 @@ Les variables de type str peuvent être créées directement en utilisant des gu
 Le type list permet de stocker une collection ordonnée d’éléments. Les listes sont modifiables et peuvent contenir des données de types différents.
 Les variables de type list peuvent être créées directement à l’aide de crochets [] ou en convertissant une séquence grâce à la fonction <a href="#" onclick="rechercheRapide('list()', 2)">list()</a>.
 
+<a href="#" onclick="voirAussi('voir-aussi-list')">Voir plus</a>
+<a class="voir-aussi-list" href="#" onclick="rechercheRapide('listes en compréhension', 1)">listes en compréhension</a>
+
 <u><b>tuple :</b></u>
 
 Le type tuple est une collection ordonnée d’éléments similaire à une liste, mais dont le contenu ne peut pas être modifié après sa création.
@@ -83,6 +86,16 @@ Les variables de type frozenset peuvent être créées à partir d’un ensemble
 <u><b>NoneType :</b></u>
 
 Le type NoneType est le type de l’objet spécial None, qui représente l’absence de valeur ou une valeur nulle. Il est souvent utilisé pour indiquer qu’une variable n’a pas encore reçu de donnée significative ou qu’une fonction ne retourne aucun résultat particulier. Comme None est un singleton (il n’existe qu’une seule instance de cet objet), on vérifie généralement sa présence avec l’opérateur is. <a href="#" onclick="rechercheRapide('', 3)">🔎</a>L’utilisation correcte de None permet de gérer proprement les cas où une valeur est absente ou indéfinie dans un programme.
+
+
+<u><b>map :</b></u>
+
+<u><b>enummerate :</b></u>
+
+<u><b>zip :</b></u>
+
+<u><b>slice :</b></u>
+
 
 <u><b>Les fonctions :</b></u>
 
@@ -259,6 +272,467 @@ Elles sont répertoriées dans deux familles :
 
 <u><b>Les méthodes ordinaires :</b></u>
 
+Elles s'appliquent à des types spécifique comme str ou list.
+
+Méthodes de type : 
+
+<table border="0">
+ <tr>
+  <th>Méthode</th>
+  <th>Description</th>
+  <th></th>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('méthode', 2)">méthode()</a></td>
+  <td>description</td>
+  <td><a href="#" onclick="rechercheRapide('.méthode', 3)">🔎</a></td>
+ </tr>
+</table>
+
+Méthodes de str : 
+
+Méthode Description
+
+<h2>Méthodes de str</h2>
+
+<table border="0">
+ <tr>
+  <th>Méthode</th>
+  <th>Description</th>
+  <th></th>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('capitalize', 2)">capitalize()</a></td>
+  <td>Met le premier caractère en majuscule et le reste en minuscules.</td>
+  <td><a href="#" onclick="rechercheRapide('.capitalize', 3)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('casefold', 2)">casefold()</a></td>
+  <td>Convertit la chaîne en minuscules de manière agressive pour les comparaisons insensibles à la casse.</td>
+  <td><a href="#" onclick="rechercheRapide('.casefold', 3)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('center', 2)">center()</a></td>
+  <td>Centre la chaîne dans une largeur donnée en ajoutant éventuellement un caractère de remplissage.</td>
+  <td><a href="#" onclick="rechercheRapide('.center', 3)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('count', 2)">count()</a></td>
+  <td>Compte le nombre d'occurrences d'une sous-chaîne.</td>
+  <td><a href="#" onclick="rechercheRapide('.count', 3)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('encode', 2)">encode()</a></td>
+  <td>Encode la chaîne en objet <code>bytes</code>.</td>
+  <td><a href="#" onclick="rechercheRapide('.encode', 3)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('endswith', 2)">endswith()</a></td>
+  <td>Renvoie <code>True</code> si la chaîne se termine par le suffixe indiqué.</td>
+  <td><a href="#" onclick="rechercheRapide('.endswith', 3)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('expandtabs', 2)">expandtabs()</a></td>
+  <td>Remplace les tabulations par des espaces.</td>
+  <td><a href="#" onclick="rechercheRapide('.expandtabs', 3)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('find', 2)">find()</a></td>
+  <td>Renvoie l'indice de la première occurrence ou <code>-1</code> si elle est absente.</td>
+  <td><a href="#" onclick="rechercheRapide('.find', 3)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('format', 2)">format()</a></td>
+  <td>Formate la chaîne à l'aide d'arguments.</td>
+  <td><a href="#" onclick="rechercheRapide('.format', 3)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('format_map', 2)">format_map()</a></td>
+  <td>Formate la chaîne en utilisant un dictionnaire.</td>
+  <td><a href="#" onclick="rechercheRapide('.format_map', 3)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('index', 2)">index()</a></td>
+  <td>Comme <code>find()</code>, mais lève une exception si la sous-chaîne est absente.</td>
+  <td><a href="#" onclick="rechercheRapide('.index', 3)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('isalnum', 2)">isalnum()</a></td>
+  <td>Renvoie <code>True</code> si tous les caractères sont alphanumériques.</td>
+  <td><a href="#" onclick="rechercheRapide('.isalnum', 3)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('isalpha', 2)">isalpha()</a></td>
+  <td>Renvoie <code>True</code> si tous les caractères sont des lettres.</td>
+  <td><a href="#" onclick="rechercheRapide('.isalpha', 3)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('isascii', 2)">isascii()</a></td>
+  <td>Renvoie <code>True</code> si tous les caractères appartiennent au jeu ASCII.</td>
+  <td><a href="#" onclick="rechercheRapide('.isascii', 3)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('isdecimal', 2)">isdecimal()</a></td>
+  <td>Renvoie <code>True</code> si tous les caractères sont des chiffres décimaux.</td>
+  <td><a href="#" onclick="rechercheRapide('.isdecimal', 3)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('isdigit', 2)">isdigit()</a></td>
+  <td>Renvoie <code>True</code> si tous les caractères sont des chiffres.</td>
+  <td><a href="#" onclick="rechercheRapide('.isdigit', 3)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('isidentifier', 2)">isidentifier()</a></td>
+  <td>Vérifie si la chaîne est un identifiant Python valide.</td>
+  <td><a href="#" onclick="rechercheRapide('.isidentifier', 3)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('islower', 2)">islower()</a></td>
+  <td>Renvoie <code>True</code> si toutes les lettres sont en minuscules.</td>
+  <td><a href="#" onclick="rechercheRapide('.islower', 3)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('isnumeric', 2)">isnumeric()</a></td>
+  <td>Renvoie <code>True</code> si tous les caractères sont numériques.</td>
+  <td><a href="#" onclick="rechercheRapide('.isnumeric', 3)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('isprintable', 2)">isprintable()</a></td>
+  <td>Renvoie <code>True</code> si tous les caractères sont imprimables.</td>
+  <td><a href="#" onclick="rechercheRapide('.isprintable', 3)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('isspace', 2)">isspace()</a></td>
+  <td>Renvoie <code>True</code> si la chaîne ne contient que des espaces ou caractères blancs.</td>
+  <td><a href="#" onclick="rechercheRapide('.isspace', 3)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('istitle', 2)">istitle()</a></td>
+  <td>Renvoie <code>True</code> si chaque mot commence par une majuscule.</td>
+  <td><a href="#" onclick="rechercheRapide('.istitle', 3)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('isupper', 2)">isupper()</a></td>
+  <td>Renvoie <code>True</code> si toutes les lettres sont en majuscules.</td>
+  <td><a href="#" onclick="rechercheRapide('.isupper', 3)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('join', 2)">join()</a></td>
+  <td>Assemble les éléments d'un itérable en les séparant par la chaîne.</td>
+  <td><a href="#" onclick="rechercheRapide('.join', 3)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('ljust', 2)">ljust()</a></td>
+  <td>Aligne la chaîne à gauche.</td>
+  <td><a href="#" onclick="rechercheRapide('.ljust', 3)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('lower', 2)">lower()</a></td>
+  <td>Convertit la chaîne en minuscules.</td>
+  <td><a href="#" onclick="rechercheRapide('.lower', 3)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('lstrip', 2)">lstrip()</a></td>
+  <td>Supprime les caractères indiqués (ou les espaces) au début de la chaîne.</td>
+  <td><a href="#" onclick="rechercheRapide('.lstrip', 3)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('maketrans', 2)">maketrans()</a></td>
+  <td>Crée une table de traduction utilisable avec <code>translate()</code>.</td>
+  <td><a href="#" onclick="rechercheRapide('.maketrans', 3)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('partition', 2)">partition()</a></td>
+  <td>Découpe la chaîne en trois parties autour du premier séparateur trouvé.</td>
+  <td><a href="#" onclick="rechercheRapide('.partition', 3)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('removeprefix', 2)">removeprefix()</a></td>
+  <td>Supprime le préfixe indiqué s'il est présent.</td>
+  <td><a href="#" onclick="rechercheRapide('.removeprefix', 3)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('removesuffix', 2)">removesuffix()</a></td>
+  <td>Supprime le suffixe indiqué s'il est présent.</td>
+  <td><a href="#" onclick="rechercheRapide('.removesuffix', 3)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('replace', 2)">replace()</a></td>
+  <td>Remplace une sous-chaîne par une autre.</td>
+  <td><a href="#" onclick="rechercheRapide('.replace', 3)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('rfind', 2)">rfind()</a></td>
+  <td>Recherche la dernière occurrence d'une sous-chaîne ou renvoie <code>-1</code>.</td>
+  <td><a href="#" onclick="rechercheRapide('.rfind', 3)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('rindex', 2)">rindex()</a></td>
+  <td>Comme <code>rfind()</code>, mais lève une exception si la sous-chaîne est absente.</td>
+  <td><a href="#" onclick="rechercheRapide('.rindex', 3)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('rjust', 2)">rjust()</a></td>
+  <td>Aligne la chaîne à droite.</td>
+  <td><a href="#" onclick="rechercheRapide('.rjust', 3)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('rpartition', 2)">rpartition()</a></td>
+  <td>Découpe la chaîne en trois parties autour de la dernière occurrence du séparateur.</td>
+  <td><a href="#" onclick="rechercheRapide('.rpartition', 3)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('rsplit', 2)">rsplit()</a></td>
+  <td>Découpe la chaîne depuis la droite.</td>
+  <td><a href="#" onclick="rechercheRapide('.rsplit', 3)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('rstrip', 2)">rstrip()</a></td>
+  <td>Supprime les caractères indiqués (ou les espaces) à la fin de la chaîne.</td>
+  <td><a href="#" onclick="rechercheRapide('.rstrip', 3)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('split', 2)">split()</a></td>
+  <td>Découpe la chaîne selon un séparateur.</td>
+  <td><a href="#" onclick="rechercheRapide('.split', 3)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('splitlines', 2)">splitlines()</a></td>
+  <td>Découpe la chaîne en lignes.</td>
+  <td><a href="#" onclick="rechercheRapide('.splitlines', 3)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('startswith', 2)">startswith()</a></td>
+  <td>Renvoie <code>True</code> si la chaîne commence par le préfixe indiqué.</td>
+  <td><a href="#" onclick="rechercheRapide('.startswith', 3)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('strip', 2)">strip()</a></td>
+  <td>Supprime les caractères indiqués (ou les espaces) au début et à la fin.</td>
+  <td><a href="#" onclick="rechercheRapide('.strip', 3)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('swapcase', 2)">swapcase()</a></td>
+  <td>Inverse les majuscules et les minuscules.</td>
+  <td><a href="#" onclick="rechercheRapide('.swapcase', 3)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('title', 2)">title()</a></td>
+  <td>Met la première lettre de chaque mot en majuscule.</td>
+  <td><a href="#" onclick="rechercheRapide('.title', 3)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('translate', 2)">translate()</a></td>
+  <td>Traduit les caractères selon une table de traduction.</td>
+  <td><a href="#" onclick="rechercheRapide('.translate', 3)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('upper', 2)">upper()</a></td>
+  <td>Convertit la chaîne en majuscules.</td>
+  <td><a href="#" onclick="rechercheRapide('.upper', 3)">🔎</a></td>
+ </tr>
+ <tr>
+  <td><a href="#" onclick="rechercheRapide('zfill', 2)">zfill()</a></td>
+  <td>Complète la chaîne avec des zéros à gauche jusqu'à la largeur indiquée.</td>
+  <td><a href="#" onclick="rechercheRapide('.zfill', 3)">🔎</a></td>
+ </tr>
+
+</table>
+
+list
+
+Méthode Description
+
+append(x) Ajoute un élément à la fin.
+clear() Vide la liste.
+copy()  Copie superficielle.
+count(x)  Compte les occurrences.
+extend(iterable)  Ajoute plusieurs éléments.
+index(x)  Renvoie l'indice d'un élément.
+insert(i,x) Insère à une position.
+pop(i)  Retire et renvoie un élément.
+remove(x) Supprime la première occurrence.
+reverse() Inverse la liste.
+sort()  Trie la liste.
+
+tuple
+
+Méthode Description
+
+count(x)  Compte les occurrences.
+index(x)  Renvoie l'indice d'un élément.
+
+dict
+
+Méthode Description
+
+clear() Vide le dictionnaire.
+copy()  Copie superficielle.
+fromkeys()  Crée un dictionnaire avec des clés.
+get(k)  Récupère une valeur sans erreur.
+items() Renvoie les couples clé/valeur.
+keys()  Renvoie les clés.
+pop(k)  Supprime une clé.
+popitem() Supprime le dernier élément.
+setdefault(k,v) Renvoie la valeur ou l'ajoute.
+update()  Met à jour le dictionnaire.
+values()  Renvoie les valeurs.
+
+set
+
+Méthode Description
+
+add(x)  Ajoute un élément.
+clear() Vide le set.
+copy()  Copie le set.
+difference()  Différence entre ensembles.
+difference_update() Met à jour avec la différence.
+discard(x)  Supprime sans erreur si absent.
+intersection()  Intersection.
+intersection_update() Met à jour avec l'intersection.
+isdisjoint()  Vérifie qu'il n'y a aucun élément commun.
+issubset()  Vérifie si c'est un sous-ensemble.
+issuperset()  Vérifie si c'est un sur-ensemble.
+pop() Retire un élément arbitraire.
+remove(x) Supprime un élément (erreur si absent).
+symmetric_difference()  Différence symétrique.
+symmetric_difference_update() Met à jour avec la différence symétrique.
+union() Union de plusieurs ensembles.
+update()  Ajoute les éléments d'autres ensembles.
+
+frozenset
+
+Méthode Description
+
+copy()
+difference()
+intersection()
+isdisjoint()
+issubset()
+issuperset()
+symmetric_difference()
+union()
+add(x)  Ajoute un élément.
+clear() Vide le set.
+copy()  Copie le set.
+difference()  Différence entre ensembles.
+difference_update() Met à jour avec la différence.
+discard(x)  Supprime sans erreur si absent.
+intersection()  Intersection.
+intersection_update() Met à jour avec l'intersection.
+isdisjoint()  Vérifie qu'il n'y a aucun élément commun.
+issubset()  Vérifie si c'est un sous-ensemble.
+issuperset()  Vérifie si c'est un sur-ensemble.
+pop() Retire un élément arbitraire.
+remove(x) Supprime un élément (erreur si absent).
+symmetric_difference()  Différence symétrique.
+symmetric_difference_update() Met à jour avec la différence symétrique.
+union() Union de plusieurs ensembles.
+update()  Ajoute les éléments d'autres ensembles.
+
+7. bytes
+
+Méthode Description
+
+count() ajouter description
+decode()ajouter description
+endswith()ajouter description
+find()ajouter description
+index()ajouter description
+join()ajouter description
+replace()ajouter description
+split()ajouter description
+startswith()ajouter description
+strip()ajouter description
+upper()ajouter description
+lower()ajouter description
+translate()ajouter description
+
+
+bytearray
+
+
+Méthode Description
+
+apcount()ajouter description
+decode()ajouter description
+endswith()ajouter description
+find()ajouter description
+index()ajouter description
+join()ajouter description
+replace()ajouter description
+split()ajouter description
+startswith()ajouter description
+strip()ajouter description
+upper()ajouter description
+lower()ajouter description
+translate()ajouter description
+pend()ajouter description
+clear()ajouter description
+copy()ajouter description
+extend()ajouter description
+insert()ajouter description
+pop()ajouter description
+remove()ajouter description
+reverse()ajouter description
+
+range
+
+Méthode Description
+count(x)  Compte les occurrences (0 ou 1 en pratique).
+index(x)  Renvoie l'indice d'une valeur.
+
+complex
+
+Méthode/Attribut  Description
+conjugate() Renvoie le conjugué complexe.
+
+int
+
+Méthode Description
+as_integer_ratio()  Retourne (numérateur, dénominateur).
+bit_count() Nombre de bits à 1.
+bit_length()  Nombre de bits nécessaires.
+to_bytes()  Convertit en bytes.
+from_bytes()  Construit un entier depuis des bytes (méthode de classe).
+12. float
+Méthode Description
+as_integer_ratio()  Fraction exacte.
+hex() Représentation hexadécimale.
+fromhex() Crée un float depuis une chaîne hexadécimale (méthode de classe).
+is_integer()  Vérifie si le nombre est entier.
+
+ bool
+
+bool hérite de int et ne possède pas de méthodes spécifiques.
+
+memoryview
+Méthode Description
+cast()  Change la vue mémoire.
+hex() Représentation hexadécimale.
+release() Libère la vue.
+tolist()  Convertit en liste.
+tobytes() Convertit en bytes.
+15. enumerate
+
+Aucune méthode spécifique (objet itérable).
+
+zip
+
+Aucune méthode spécifique (objet itérable).
+
+map
+
+Aucune méthode spécifique (objet itérable).
+
+filter
+
+Aucune méthode spécifique (objet itérable).
+
+slice
+Attribut  Description
+
+indices() Calcule les indices effectifs pour une longueur donnée.
 
 <u><b>Les méthodes spéciales (dunder) :</b></u>
 
