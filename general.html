@@ -766,7 +766,7 @@ Méthodes de type :
   <td><a href="#" onclick="rechercheRapide('.symmetric_difference', 3)">🔎</a></td>
  </tr>
  <tr>
-  <td><a href="#" onclick="rechercheRapide('symmetric_difference_update', 2)">symmetric_difference_update()</a></td>
+  <td><a href="#" onclick="rechercheRapide('symmetric_ difference_update', 2)">symmetric_difference_update()</a></td>
   <td>Met à jour le set avec la différence symétrique.</td>
   <td><a href="#" onclick="rechercheRapide('.symmetric_difference_update', 3)">🔎</a></td>
  </tr>
@@ -792,17 +792,6 @@ Méthodes de type :
   <th></th>
  </tr>
  <tr>
-  <td><a href="#" onclick="rechercheRapide('add', 2)">add(x)</a></td>
-  <td>Ajoute un élément au frozenset.</td>
-  <td><a href="#" onclick="rechercheRapide('.add', 3)">🔎</a></td>
- </tr>
-
- <tr>
-  <td><a href="#" onclick="rechercheRapide('clear', 2)">clear()</a></td>
-  <td>Vide complètement le frozenset.</td>
-  <td><a href="#" onclick="rechercheRapide('.clear', 3)">🔎</a></td>
- </tr>
- <tr>
   <td><a href="#" onclick="rechercheRapide('copy', 2)">copy()</a></td>
   <td>Renvoie une copie superficielle du frozenset.</td>
   <td><a href="#" onclick="rechercheRapide('.copy', 3)">🔎</a></td>
@@ -813,24 +802,9 @@ Méthodes de type :
   <td><a href="#" onclick="rechercheRapide('.difference', 3)">🔎</a></td>
  </tr>
  <tr>
-  <td><a href="#" onclick="rechercheRapide('difference_update', 2)">difference_update()</a></td>
-  <td>Met à jour le frozenset en supprimant les éléments présents dans d'autres ensembles.</td>
-  <td><a href="#" onclick="rechercheRapide('.difference_update', 3)">🔎</a></td>
- </tr>
- <tr>
-  <td><a href="#" onclick="rechercheRapide('discard', 2)">discard()</a></td>
-  <td>Supprime un élément sans erreur s'il est absent.</td>
-  <td><a href="#" onclick="rechercheRapide('.discard', 3)">🔎</a></td>
- </tr>
- <tr>
   <td><a href="#" onclick="rechercheRapide('intersection', 2)">intersection()</a></td>
   <td>Renvoie un frozenset contenant les éléments communs à plusieurs ensembles.</td>
   <td><a href="#" onclick="rechercheRapide('.intersection', 3)">🔎</a></td>
- </tr>
- <tr>
-  <td><a href="#" onclick="rechercheRapide('intersection_update', 2)">intersection_update()</a></td>
-  <td>Met à jour le frozenset en ne gardant que les éléments communs.</td>
-  <td><a href="#" onclick="rechercheRapide('.intersection_update', 3)">🔎</a></td>
  </tr>
  <tr>
   <td><a href="#" onclick="rechercheRapide('isdisjoint', 2)">isdisjoint()</a></td>
@@ -848,34 +822,14 @@ Méthodes de type :
   <td><a href="#" onclick="rechercheRapide('.issuperset', 3)">🔎</a></td>
  </tr>
  <tr>
-  <td><a href="#" onclick="rechercheRapide('pop', 2)">pop()</a></td>
-  <td>Retire et renvoie un élément arbitraire du frozenset.</td>
-  <td><a href="#" onclick="rechercheRapide('.pop', 3)">🔎</a></td>
- </tr>
- <tr>
-  <td><a href="#" onclick="rechercheRapide('remove', 2)">remove()</a></td>
-  <td>Supprime un élément (erreur si l'élément n'existe pas).</td>
-  <td><a href="#" onclick="rechercheRapide('.remove', 3)">🔎</a></td>
- </tr>
- <tr>
   <td><a href="#" onclick="rechercheRapide('symmetric_difference', 2)">symmetric_difference()</a></td>
   <td>Renvoie les éléments présents dans l'un ou l'autre des ensembles, mais pas les deux.</td>
   <td><a href="#" onclick="rechercheRapide('.symmetric_difference', 3)">🔎</a></td>
  </tr>
  <tr>
-  <td><a href="#" onclick="rechercheRapide('symmetric_difference_update', 2)">symmetric_difference_update()</a></td>
-  <td>Met à jour le frozenset avec la différence symétrique.</td>
-  <td><a href="#" onclick="rechercheRapide('.symmetric_difference_update', 3)">🔎</a></td>
- </tr>
- <tr>
   <td><a href="#" onclick="rechercheRapide('union', 2)">union()</a></td>
   <td>Renvoie un frozenset contenant tous les éléments des ensembles combinés.</td>
   <td><a href="#" onclick="rechercheRapide('.union', 3)">🔎</a></td>
- </tr>
- <tr>
-  <td><a href="#" onclick="rechercheRapide('update', 2)">update()</a></td>
-  <td>Ajoute les éléments d'autres ensembles au frozenset.</td>
-  <td><a href="#" onclick="rechercheRapide('.update', 3)">🔎</a></td>
  </tr>
 </table>
 
@@ -1186,7 +1140,7 @@ Méthodes de type :
   </td>
  </tr>
  <tr>
-  <td><a href="#" onclick="rechercheRapide('int', 2)">int()</a></td>
+  <td><a href="#" onclick="rechercheRapide('int', 2)">int(bool)</a></td>
   <td>bool peut utiliser toutes les méthodes héritées de <code>int</code> (car True = 1, False = 0).</td>
   <td><a href="#" onclick="rechercheRapide('.int', 3)">🔎</a></td>
  </tr>
@@ -1230,70 +1184,7 @@ Méthodes de type :
 
 <b>enumerate / zip / map / filter</b>
 
-<table border="0">
- <tr>
-  <th>Objet</th>
-  <th>Description</th>
-  <th></th>
- </tr>
-
- <tr>
-  <td colspan="3">
-   <b>enumerate()</b>
-  </td>
- </tr>
- <tr>
-  <td>Aucune méthode spécifique</td>
-  <td>Objet itérable qui associe un index à chaque élément d’un itérable.</td>
-  <td><a href="#" onclick="rechercheRapide('enumerate', 3)">🔎</a></td>
- </tr>
-
- <tr>
-  <td colspan="3"><hr></td>
- </tr>
-
- <tr>
-  <td colspan="3">
-   <b>zip()</b>
-  </td>
- </tr>
- <tr>
-  <td>Aucune méthode spécifique</td>
-  <td>Objet itérable qui regroupe plusieurs itérables élément par élément.</td>
-  <td><a href="#" onclick="rechercheRapide('zip', 3)">🔎</a></td>
- </tr>
-
- <tr>
-  <td colspan="3"><hr></td>
- </tr>
-
- <tr>
-  <td colspan="3">
-   <b>map()</b>
-  </td>
- </tr>
- <tr>
-  <td>Aucune méthode spécifique</td>
-  <td>Applique une fonction à chaque élément d’un itérable et renvoie un itérateur.</td>
-  <td><a href="#" onclick="rechercheRapide('map', 3)">🔎</a></td>
- </tr>
-
- <tr>
-  <td colspan="3"><hr></td>
- </tr>
-
- <tr>
-  <td colspan="3">
-   <b>filter()</b>
-  </td>
- </tr>
- <tr>
-  <td>Aucune méthode spécifique</td>
-  <td>Filtre les éléments d’un itérable selon une fonction conditionnelle.</td>
-  <td><a href="#" onclick="rechercheRapide('filter', 3)">🔎</a></td>
- </tr>
-
-</table>
+Aucune méthode.
 
 <b>Méthodes de slice</b>
 
