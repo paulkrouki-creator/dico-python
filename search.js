@@ -84,6 +84,53 @@ document.addEventListener("DOMContentLoaded", () => {
                 return !isValid(before) && !isValid(after);
             }
 
+			function levenshtein(a, b) {
+
+    			const m = a.length;
+    			const n = b.length;
+
+    			const dp = Array.from({ length: m + 1 }, () => new Array(n + 1));
+
+    			for (let i = 0; i <= m; i++) dp[i][0] = i;
+    			for (let j = 0; j <= n; j++) dp[0][j] = j;
+
+    			for (let i = 1; i <= m; i++) {
+        			for (let j = 1; j <= n; j++) {
+
+            			const cost = a[i - 1] === b[j - 1] ? 0 : 1;
+
+            			dp[i][j] = Math.min(
+            			    dp[i - 1][j] + 1,
+            			    dp[i][j - 1] + 1,
+            			    dp[i - 1][j - 1] + cost
+        			    );
+			        }
+			    }
+
+			    return dp[m][n];
+			}
+
+			function maxDistance(word) {
+
+			    if (word.length <= 5) return 0;
+			    if (word.length <= 10) return 2;
+			    return 4;
+			}
+
+			function matchesWithOneInsertion(a, b) {
+    			// a = mot trouvé dans le texte
+    			// b = mot recherché
+
+    			if (a.length !== b.length + 1) return false;
+
+    			for (let i = 0; i < a.length; i++) {
+    			    const test = a.slice(0, i) + a.slice(i + 1);
+    			    if (test === b) return true;
+   			 	}
+
+    			return false;
+			}
+
             function walk(node) {
 
                 if (node.nodeType === 3) {
@@ -97,35 +144,83 @@ document.addEventListener("DOMContentLoaded", () => {
                     let lastIndex = 0;
                     let index = 0;
 
-                    while ((index = lowerText.indexOf(normalizedTerm, index)) !== -1) {
+					const maxDist = maxDistance(normalizedTerm);
 
-                        const start = index;
-                        const end = index + normalizedTerm.length;
+					if (maxDist === 0) {
 
-                        if (wholeWord && !isWordBoundary(lowerText, start, end)) {
-                            index++;
-                            continue;
-                        }
+    					while ((index = lowerText.indexOf(normalizedTerm, index)) !== -1) {
 
-                        if (start > lastIndex) {
-                            frag.appendChild(
-                                document.createTextNode(text.slice(lastIndex, start))
-                            );
-                        }
+        					const start = index;
+        					const end = index + normalizedTerm.length;
 
-                        const mark = document.createElement("span");
-                        mark.textContent = text.slice(start, end);
+        					if (wholeWord && !isWordBoundary(lowerText, start, end)) {
+            					index++;
+            					continue;
+        					}
 
-                        mark.className = previewMode
-                            ? "highlight preview"
-                            : "highlight";
+        					if (start > lastIndex) {
+            					frag.appendChild(
+            					    document.createTextNode(text.slice(lastIndex, start))
+            					);
+        					}
 
-                        frag.appendChild(mark);
-                        results.push(mark);
+        					const mark = document.createElement("span");
+        					mark.textContent = text.slice(start, end);
+        					mark.className = previewMode
+        					    ? "highlight preview"
+        					    : "highlight";
 
-                        lastIndex = end;
-                        index = end;
-                    }
+        					frag.appendChild(mark);
+        					results.push(mark);
+
+        					lastIndex = end;
+        					index = end;
+    					}
+
+					} else {
+
+    					const regex = /\b[\p{L}\p{N}_]+\b/gu;
+
+    					let match;
+
+    					while ((match = regex.exec(lowerText)) !== null) {
+
+        					const candidate = match[0];
+
+        					if (Math.abs(candidate.length - normalizedTerm.length) > maxDist) {
+        					    continue;
+        					}
+
+        					const dist = levenshtein(candidate, normalizedTerm);
+
+        					if (
+    							dist > maxDist &&
+							    !matchesWithOneInsertion(candidate, normalizedTerm)
+							) {
+							    continue;
+							}
+
+        					const start = match.index;
+        					const end = start + candidate.length;
+
+        					if (start > lastIndex) {
+            					frag.appendChild(
+                					document.createTextNode(text.slice(lastIndex, start))
+            					);
+        					}
+
+        					const mark = document.createElement("span");
+        					mark.textContent = text.slice(start, end);
+        					mark.className = previewMode
+        					    ? "highlight preview"
+        					    : "highlight";
+
+        					frag.appendChild(mark);
+					        results.push(mark);
+					
+					        lastIndex = end;
+					    }
+					}
 
                     frag.appendChild(
                         document.createTextNode(text.slice(lastIndex))
