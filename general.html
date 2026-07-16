@@ -5,7 +5,6 @@
   On peut tester le type d'un objet avec la fonction <a href="#" onclick="rechercheRapide('type() f. ou o. :', 2)">type()</a>.
 
 <table>
-<thead>
 <tr>
     <th>Type</th>
     <th>Description</th>
@@ -15,178 +14,146 @@
     <th>Indexable</th>
     <th>Conserve l'ordre</th>
     <th>Doublons autorisés</th>
-    <th>Remarques</th>
 </tr>
-</thead>
-
-<tbody>
 
 <tr>
 <td>int</td>
 <td>Nombre entier</td>
-<td>42</td>
 <td>Non</td>
 <td>Entiers positifs ou négatifs</td>
 <td>Non</td>
 <td>—</td>
 <td>—</td>
-<td>Précision illimitée</td>
 </tr>
 
 <tr>
 <td>float</td>
 <td>Nombre décimal</td>
-<td>3.14</td>
 <td>Non</td>
 <td>Réels</td>
 <td>Non</td>
 <td>—</td>
 <td>—</td>
-<td>Double précision (IEEE 754)</td>
 </tr>
 
 <tr>
 <td>complex</td>
 <td>Nombre complexe</td>
-<td>3j</td>
 <td>Non</td>
 <td>Nombres complexes</td>
 <td>Non</td>
 <td>—</td>
 <td>—</td>
-<td>Utilisé en calcul scientifique</td>
 </tr>
 
 <tr>
 <td>bool</td>
 <td>Booléen</td>
-<td>True, False</td>
 <td>Non</td>
 <td>Vrai ou Faux</td>
 <td>Non</td>
 <td>—</td>
 <td>—</td>
-<td>Sous-classe de int</td>
 </tr>
 
 <tr>
 <td>str</td>
 <td>Chaîne de caractères</td>
-<td>"Bonjour"</td>
 <td>Non</td>
 <td>Texte Unicode</td>
 <td>Oui</td>
 <td>Oui</td>
 <td>Oui</td>
-<td>Très utilisée</td>
 </tr>
 
 <tr>
 <td>list</td>
 <td>Liste</td>
-<td>[1,2,3]</td>
 <td>Oui</td>
 <td>Objets de tout type</td>
 <td>Oui</td>
 <td>Oui</td>
 <td>Oui</td>
-<td>Ajout, suppression, modification possibles</td>
 </tr>
 
 <tr>
 <td>tuple</td>
 <td>Tuple</td>
-<td>(1,2,3)</td>
 <td>Non</td>
 <td>Objets de tout type</td>
 <td>Oui</td>
 <td>Oui</td>
 <td>Oui</td>
-<td>Plus rapide qu'une liste</td>
 </tr>
 
 <tr>
 <td>dict</td>
 <td>Dictionnaire</td>
-<td>{"nom":"Alice"}</td>
 <td>Oui</td>
 <td>Paires clé → valeur</td>
 <td>Par clé</td>
 <td>Oui</td>
 <td>Clés uniques</td>
-<td>Recherche très rapide</td>
 </tr>
 
 <tr>
 <td>set</td>
 <td>Ensemble</td>
-<td>{1,2,3}</td>
 <td>Oui</td>
 <td>Valeurs uniques</td>
 <td>Non</td>
 <td>Non</td>
 <td>Non</td>
-<td>Très rapide pour les recherches</td>
 </tr>
 
 <tr>
 <td>frozenset</td>
 <td>Ensemble figé</td>
-<td>frozenset({1,2,3})</td>
 <td>Non</td>
 <td>Valeurs uniques</td>
 <td>Non</td>
 <td>Non</td>
 <td>Non</td>
-<td>Version immuable de set</td>
 </tr>
 
 <tr>
 <td>bytes</td>
 <td>Données binaires</td>
-<td>b"abc"</td>
 <td>Non</td>
 <td>Octets (0-255)</td>
 <td>Oui</td>
 <td>Oui</td>
 <td>Oui</td>
-<td>Utilisé pour les fichiers et réseaux</td>
 </tr>
 
 <tr>
 <td>bytearray</td>
 <td>Tableau d'octets</td>
-<td>bytearray(b"abc")</td>
 <td>Oui</td>
 <td>Octets modifiables</td>
 <td>Oui</td>
 <td>Oui</td>
 <td>Oui</td>
-<td>Version mutable de bytes</td>
 </tr>
 
 <tr>
 <td>range</td>
 <td>Séquence d'entiers</td>
-<td>range(10)</td>
 <td>Non</td>
 <td>Suite d'entiers</td>
 <td>Oui</td>
 <td>Oui</td>
 <td>Non</td>
-<td>Économe en mémoire</td>
 </tr>
 
 <tr>
 <td>NoneType</td>
 <td>Absence de valeur</td>
-<td>None</td>
 <td>Non</td>
 <td>Aucune valeur</td>
 <td>Non</td>
 <td>—</td>
 <td>—</td>
-<td>Unique objet None</td>
 </tr>
 
 </tbody>
